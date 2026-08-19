@@ -2372,6 +2372,47 @@ popupButton.addEventListener(
 
 
 /* ==================================================
+   PERSISTENT PENDING BOOKING
+================================================== */
+
+const PENDING_BOOKING_KEY = "mester_pax_pending_booking";
+
+function savePendingBooking(id) {
+  if (!id) return;
+
+  localStorage.setItem(
+    PENDING_BOOKING_KEY,
+    JSON.stringify({
+      id: String(id),
+      createdAt: Date.now()
+    })
+  );
+}
+
+function getPendingBooking() {
+  try {
+    const raw = localStorage.getItem(PENDING_BOOKING_KEY);
+    if (!raw) return null;
+
+    const data = JSON.parse(raw);
+
+    if (!data || !data.id) {
+      localStorage.removeItem(PENDING_BOOKING_KEY);
+      return null;
+    }
+
+    return data;
+  } catch (error) {
+    console.error("Pending booking storage error:", error);
+    return null;
+  }
+}
+
+function clearPendingBooking() {
+  localStorage.removeItem(PENDING_BOOKING_KEY);
+}
+
+/* ==================================================
    BOOK
 ================================================== */
 
@@ -2488,6 +2529,11 @@ async function bookAppointment() {
 
     selectedBookingID =
       data.id;
+
+    // نگه داشتن نوبت در انتظار تا بعد از Refresh هم Popup باقی بماند
+    savePendingBooking(
+      selectedBookingID
+    );
 
 
     /*
@@ -2759,10 +2805,42 @@ function stopStatusPolling() {
 
 
 /* ==================================================
+   RESTORE PENDING BOOKING AFTER REFRESH
+================================================== */
+
+function restorePendingBooking() {
+
+  const pending =
+    getPendingBooking();
+
+  if (!pending) {
+    return;
+  }
+
+  selectedBookingID =
+    pending.id;
+
+  showPendingPopup();
+
+  startStatusPolling(
+    pending.id
+  );
+}
+
+
+/* ==================================================
    START
 ================================================== */
 
 initCalendar();
+
+// بعد از لود کامل صفحه، نوبت در انتظار را برگردان
+window.addEventListener(
+  "load",
+  function() {
+    restorePendingBooking();
+  }
+);
 
 </script>
 
