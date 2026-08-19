@@ -3,510 +3,460 @@
 
 <head>
 
-    <meta charset="UTF-8">
+<meta charset="UTF-8">
 
-    <meta
-        name="viewport"
-        content="width=device-width, initial-scale=1.0"
-    >
+<meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+>
 
-    <title>MESTER PAX | نوبت‌دهی</title>
+<title>MESTER PAX | نوبت‌دهی</title>
 
 
-    <!-- Persian Datepicker -->
+<style>
 
-    <link
-        rel="stylesheet"
-        href="https://cdn.jsdelivr.net/npm/persian-datepicker@1.2.0/dist/css/persian-datepicker.min.css"
-    >
+* {
+    box-sizing: border-box;
+}
 
 
-    <style>
+body {
 
-        * {
-            box-sizing: border-box;
-        }
+    margin: 0;
 
+    min-height: 100vh;
 
-        body {
+    font-family:
+        Tahoma,
+        Arial,
+        sans-serif;
 
-            margin: 0;
+    background:
+        radial-gradient(
+            circle at top,
+            #252525,
+            #090909 70%
+        );
 
-            min-height: 100vh;
+    color: white;
+}
 
-            font-family:
-                Tahoma,
-                Arial,
-                sans-serif;
 
-            background:
-                radial-gradient(
-                    circle at top,
-                    #252525 0%,
-                    #111 45%,
-                    #050505 100%
-                );
+.container {
 
-            color: #fff;
-        }
+    width: 100%;
 
+    max-width: 520px;
 
-        .container {
+    margin: auto;
 
-            width: 100%;
+    padding:
+        20px 16px 50px;
+}
 
-            max-width: 520px;
 
-            margin: auto;
+.logo {
 
-            padding:
-                20px 16px 50px;
-        }
+    text-align: center;
 
+    padding:
+        30px 0;
+}
 
-        /* =========================
-           LOGO
-        ========================= */
 
-        .logo {
+.logo h1 {
 
-            text-align: center;
+    margin: 0;
 
-            padding:
-                30px 0 35px;
-        }
+    font-size: 38px;
 
+    letter-spacing: 4px;
 
-        .logo h1 {
+}
 
-            margin: 0;
 
-            font-size: 38px;
+.logo p {
 
-            font-weight: 800;
+    color: #888;
 
-            letter-spacing: 5px;
+    margin-top: 10px;
 
-            color: #fff;
-        }
+    font-size: 14px;
+}
 
 
-        .logo p {
+.card {
 
-            margin:
-                12px 0 0;
+    background: #171717;
 
-            color: #999;
+    border:
+        1px solid #2d2d2d;
 
-            font-size: 14px;
-        }
+    border-radius: 20px;
 
+    padding: 20px;
 
-        /* =========================
-           MESSAGE
-        ========================= */
+    margin-bottom: 18px;
+}
 
-        .message {
 
-            display: none;
+.title {
 
-            padding: 15px;
+    font-size: 18px;
 
-            margin-bottom: 18px;
+    font-weight: bold;
 
-            border-radius: 14px;
+    margin-bottom: 18px;
+}
 
-            text-align: center;
 
-            line-height: 1.8;
+.services {
 
-            font-size: 14px;
-        }
+    display: grid;
 
+    gap: 10px;
+}
 
-        .message.success {
 
-            display: block;
+.service {
 
-            background: #12351f;
+    width: 100%;
 
-            color: #8ff0a4;
+    padding: 15px;
 
-            border:
-                1px solid #245b36;
-        }
+    background: #222;
 
+    color: white;
 
-        .message.error {
+    border:
+        1px solid #333;
 
-            display: block;
+    border-radius: 12px;
 
-            background: #421b1b;
+    font-family: inherit;
 
-            color: #ff9b9b;
+    cursor: pointer;
 
-            border:
-                1px solid #6b2929;
-        }
+    text-align: right;
 
+    font-size: 14px;
+}
 
-        /* =========================
-           CARD
-        ========================= */
 
-        .card {
+.service.selected {
 
-            background:
-                rgba(22, 22, 22, 0.96);
+    background: white;
 
-            border:
-                1px solid #2c2c2c;
+    color: black;
 
-            border-radius: 20px;
+    border-color: white;
 
-            padding: 20px;
+    font-weight: bold;
+}
 
-            margin-bottom: 18px;
 
-            box-shadow:
-                0 10px 30px
-                rgba(0, 0, 0, 0.25);
-        }
+.label {
 
+    display: block;
 
-        .title {
+    color: #999;
 
-            font-size: 18px;
+    font-size: 13px;
 
-            font-weight: bold;
+    margin-bottom: 8px;
+}
 
-            margin-bottom: 18px;
-        }
 
+input {
 
-        /* =========================
-           SERVICES
-        ========================= */
+    width: 100%;
 
-        .services {
+    height: 50px;
 
-            display: grid;
+    background: #222;
 
-            gap: 10px;
-        }
+    color: white;
 
+    border:
+        1px solid #333;
 
-        .service {
+    border-radius: 12px;
 
-            width: 100%;
+    padding: 0 14px;
 
-            padding: 16px;
+    font-family: inherit;
 
-            background: #202020;
+    font-size: 15px;
 
-            border:
-                1px solid #343434;
+    outline: none;
 
-            border-radius: 13px;
+    margin-bottom: 15px;
+}
 
-            color: #fff;
 
-            cursor: pointer;
+input:focus {
 
-            font-size: 15px;
+    border-color: #777;
+}
 
-            transition:
-                0.2s ease;
 
-            text-align: right;
-        }
+/*
+===============================
+تاریخ
+===============================
+*/
 
+.date-box {
 
-        .service:hover {
+    position: relative;
+}
 
-            border-color: #777;
 
-            transform:
-                translateY(-1px);
-        }
+#date {
 
+    position: absolute;
 
-        .service.selected {
+    opacity: 0;
 
-            background: #fff;
+    pointer-events: none;
 
-            color: #000;
+    width: 1px;
 
-            border-color: #fff;
+    height: 1px;
+}
 
-            font-weight: bold;
-        }
 
+#persianDate {
 
-        /* =========================
-           INPUT
-        ========================= */
+    cursor: pointer;
 
-        .input-group {
+    display: flex;
 
-            margin-bottom: 14px;
-        }
+    align-items: center;
 
+    justify-content: space-between;
 
-        .input-label {
+    background: #222;
 
-            display: block;
+    border:
+        1px solid #333;
 
-            margin-bottom: 8px;
+    border-radius: 12px;
 
-            color: #aaa;
+    min-height: 50px;
 
-            font-size: 13px;
-        }
+    padding:
+        0 14px;
 
+    color: white;
 
-        input {
+    margin-bottom: 18px;
+}
 
-            width: 100%;
 
-            height: 50px;
+#persianDate.empty {
 
-            padding:
-                0 14px;
+    color: #777;
+}
 
-            border-radius: 12px;
 
-            border:
-                1px solid #343434;
+/*
+===============================
+ساعت‌ها
+===============================
+*/
 
-            background: #202020;
+.times {
 
-            color: #fff;
+    display: grid;
 
-            font-family:
-                Tahoma,
-                Arial,
-                sans-serif;
+    grid-template-columns:
+        repeat(2, 1fr);
 
-            font-size: 15px;
+    gap: 10px;
+}
 
-            outline: none;
-        }
 
+.time {
 
-        input:focus {
+    min-height: 50px;
 
-            border-color: #888;
-        }
+    background: #222;
 
+    color: white;
 
-        input::placeholder {
+    border:
+        1px solid #333;
 
-            color: #777;
-        }
+    border-radius: 12px;
 
+    font-family: inherit;
 
-        /* =========================
-           DATE PICKER
-        ========================= */
+    font-size: 15px;
 
-        #persianDate {
+    cursor: pointer;
+}
 
-            cursor: pointer;
 
-            text-align: right;
-        }
+.time:hover:not(:disabled) {
 
+    border-color: #888;
+}
 
-        /* =========================
-           TIMES
-        ========================= */
 
-        .times {
+.time.selected {
 
-            display: grid;
+    background: white;
 
-            grid-template-columns:
-                repeat(2, 1fr);
+    color: black;
 
-            gap: 10px;
+    border-color: white;
 
-            margin-top: 5px;
-        }
+    font-weight: bold;
+}
 
 
-        .time {
+/*
+ساعت رزروشده
+*/
 
-            min-height: 50px;
+.time.reserved {
 
-            padding: 12px;
+    background: #351d1d;
 
-            background: #202020;
+    color: #777;
 
-            border:
-                1px solid #343434;
+    border-color: #4a2929;
 
-            border-radius: 12px;
+    cursor: not-allowed;
 
-            color: #fff;
+    text-decoration:
+        line-through;
 
-            cursor: pointer;
+}
 
-            font-family:
-                Tahoma,
-                Arial,
-                sans-serif;
 
-            font-size: 15px;
+.loading,
+.empty {
 
-            transition:
-                0.2s ease;
-        }
+    grid-column:
+        1 / -1;
 
+    text-align: center;
 
-        .time:hover {
+    color: #888;
 
-            border-color: #888;
-        }
+    padding: 20px 5px;
 
+    font-size: 13px;
 
-        .time.selected {
+    line-height: 2;
+}
 
-            background: #fff;
 
-            color: #000;
+/*
+===============================
+ثبت
+===============================
+*/
 
-            border-color: #fff;
+.submit {
 
-            font-weight: bold;
-        }
+    width: 100%;
 
+    height: 54px;
 
-        .loading {
+    margin-top: 5px;
 
-            grid-column:
-                1 / -1;
+    border: none;
 
-            text-align: center;
+    border-radius: 13px;
 
-            color: #888;
+    background: white;
 
-            padding: 18px 5px;
+    color: black;
 
-            font-size: 13px;
-        }
+    font-family: inherit;
 
+    font-size: 16px;
 
-        .empty {
+    font-weight: bold;
 
-            grid-column:
-                1 / -1;
+    cursor: pointer;
+}
 
-            text-align: center;
 
-            padding: 18px 5px;
+.submit:disabled {
 
-            color: #aaa;
+    opacity: .35;
 
-            line-height: 1.8;
+    cursor: not-allowed;
+}
 
-            font-size: 13px;
-        }
 
+.message {
 
-        /* =========================
-           SUBMIT
-        ========================= */
+    display: none;
 
-        .submit {
+    padding: 14px;
 
-            width: 100%;
+    margin-bottom: 18px;
 
-            height: 54px;
+    border-radius: 12px;
 
-            margin-top: 5px;
+    text-align: center;
 
-            border: none;
+    font-size: 13px;
 
-            border-radius: 14px;
+    line-height: 1.8;
+}
 
-            background: #fff;
 
-            color: #000;
+.message.success {
 
-            font-family:
-                Tahoma,
-                Arial,
-                sans-serif;
+    display: block;
 
-            font-size: 16px;
+    background: #12351f;
 
-            font-weight: bold;
+    color: #8ff0a4;
+}
 
-            cursor: pointer;
 
-            transition:
-                0.2s ease;
-        }
+.message.error {
 
+    display: block;
 
-        .submit:hover:not(:disabled) {
+    background: #401c1c;
 
-            transform:
-                translateY(-1px);
+    color: #ff9999;
+}
 
-            background: #e9e9e9;
-        }
 
+footer {
 
-        .submit:disabled {
+    text-align: center;
 
-            opacity: 0.4;
+    color: #555;
 
-            cursor: not-allowed;
-        }
+    font-size: 12px;
 
+    line-height: 2;
 
-        /* =========================
-           FOOTER
-        ========================= */
+    margin-top: 25px;
+}
 
-        footer {
 
-            text-align: center;
+@media(max-width:400px) {
 
-            color: #666;
+    .logo h1 {
 
-            font-size: 12px;
+        font-size: 31px;
 
-            line-height: 2;
+    }
 
-            margin-top: 30px;
-        }
+}
 
-
-        /* =========================
-           MOBILE
-        ========================= */
-
-        @media (max-width: 400px) {
-
-            .logo h1 {
-
-                font-size: 31px;
-
-                letter-spacing: 3px;
-            }
-
-
-            .card {
-
-                padding: 17px;
-            }
-
-        }
-
-    </style>
+</style>
 
 </head>
 
@@ -517,251 +467,196 @@
 <div class="container">
 
 
-    <!-- =========================
-         LOGO
-    ========================= -->
+<div class="logo">
 
-    <div class="logo">
+    <h1>MESTER PAX</h1>
 
-        <h1>MESTER PAX</h1>
+    <p>
+        مدیریت یوسف قربانی
+    </p>
 
-        <p>
-            مدیریت یوسف قربانی
-        </p>
+</div>
 
+
+<div
+    id="message"
+    class="message"
+></div>
+
+
+<!-- خدمات -->
+
+<div class="card">
+
+    <div class="title">
+        انتخاب خدمت
     </div>
 
 
-
-    <!-- =========================
-         MESSAGE
-    ========================= -->
-
-    <div
-        id="message"
-        class="message"
-    ></div>
-
-
-
-    <!-- =========================
-         SERVICE
-    ========================= -->
-
-    <div class="card">
-
-        <div class="title">
-            انتخاب خدمت
-        </div>
-
-
-        <div class="services">
-
-
-            <button
-                type="button"
-                class="service"
-                data-service="کوتاهی مو"
-            >
-                کوتاهی مو
-            </button>
-
-
-            <button
-                type="button"
-                class="service"
-                data-service="اصلاح ریش"
-            >
-                اصلاح ریش
-            </button>
-
-
-            <button
-                type="button"
-                class="service"
-                data-service="کوتاهی + اصلاح ریش"
-            >
-                کوتاهی + اصلاح ریش
-            </button>
-
-
-        </div>
-
-    </div>
-
-
-
-    <!-- =========================
-         DATE & TIME
-    ========================= -->
-
-    <div class="card">
-
-        <div class="title">
-            انتخاب تاریخ و ساعت
-        </div>
-
-
-        <div class="input-group">
-
-            <label
-                class="input-label"
-                for="persianDate"
-            >
-                تاریخ
-            </label>
-
-
-            <input
-                type="text"
-                id="persianDate"
-                placeholder="انتخاب تاریخ"
-                readonly
-                autocomplete="off"
-            >
-
-
-            <!--
-                این input مخفی است.
-                تاریخ میلادی برای Backend
-                داخل آن قرار می‌گیرد.
-            -->
-
-            <input
-                type="hidden"
-                id="date"
-            >
-
-        </div>
-
-
-        <div
-            id="times"
-            class="times"
-        >
-
-            <div class="loading">
-                ابتدا تاریخ را انتخاب کنید
-            </div>
-
-        </div>
-
-    </div>
-
-
-
-    <!-- =========================
-         CUSTOMER
-    ========================= -->
-
-    <div class="card">
-
-        <div class="title">
-            اطلاعات مشتری
-        </div>
-
-
-        <div class="input-group">
-
-            <label
-                class="input-label"
-                for="customerName"
-            >
-                نام و نام خانوادگی
-            </label>
-
-
-            <input
-                type="text"
-                id="customerName"
-                placeholder="مثلاً علی رضایی"
-                autocomplete="name"
-            >
-
-        </div>
-
-
-
-        <div class="input-group">
-
-            <label
-                class="input-label"
-                for="phone"
-            >
-                شماره موبایل
-            </label>
-
-
-            <input
-                type="tel"
-                id="phone"
-                placeholder="مثلاً 09123456789"
-                maxlength="11"
-                inputmode="numeric"
-                autocomplete="tel"
-            >
-
-        </div>
+    <div class="services">
 
 
         <button
-            type="button"
-            id="submitButton"
-            class="submit"
-            disabled
+            class="service"
+            data-service="کوتاهی مو"
         >
-            ثبت نوبت
+            کوتاهی مو
         </button>
+
+
+        <button
+            class="service"
+            data-service="اصلاح ریش"
+        >
+            اصلاح ریش
+        </button>
+
+
+        <button
+            class="service"
+            data-service="کوتاهی + اصلاح ریش"
+        >
+            کوتاهی + اصلاح ریش
+        </button>
+
+
+    </div>
+
+</div>
+
+
+<!-- تاریخ و ساعت -->
+
+<div class="card">
+
+    <div class="title">
+        انتخاب تاریخ و ساعت
+    </div>
+
+
+    <label class="label">
+        تاریخ
+    </label>
+
+
+    <div class="date-box">
+
+        <div
+            id="persianDate"
+            class="empty"
+        >
+
+            <span id="dateText">
+                انتخاب تاریخ
+            </span>
+
+            <span>
+                📅
+            </span>
+
+        </div>
+
+
+        <input
+            type="date"
+            id="date"
+        >
 
     </div>
 
 
+    <div
+        id="times"
+        class="times"
+    >
 
-    <!-- =========================
-         FOOTER
-    ========================= -->
+        <div class="empty">
 
-    <footer>
+            ابتدا تاریخ را انتخاب کنید
 
-        MESTER PAX
+        </div>
 
-        <br>
+    </div>
 
-        مدیریت یوسف قربانی
+</div>
 
-    </footer>
+
+<!-- اطلاعات مشتری -->
+
+<div class="card">
+
+    <div class="title">
+        اطلاعات مشتری
+    </div>
+
+
+    <label class="label">
+        نام و نام خانوادگی
+    </label>
+
+    <input
+        id="customerName"
+        type="text"
+        placeholder="مثلاً علی رضایی"
+    >
+
+
+    <label class="label">
+        شماره موبایل
+    </label>
+
+    <input
+        id="phone"
+        type="tel"
+        maxlength="11"
+        inputmode="numeric"
+        placeholder="09123456789"
+    >
+
+
+    <button
+        id="submitButton"
+        class="submit"
+        disabled
+    >
+        ثبت نوبت
+    </button>
+
+</div>
+
+
+<footer>
+
+    MESTER PAX
+
+    <br>
+
+    مدیریت یوسف قربانی
+
+</footer>
 
 
 </div>
 
 
-
-<!-- =========================
-     LIBRARIES
-========================= -->
-
-<script src="https://cdn.jsdelivr.net/npm/jquery@3.7.1/dist/jquery.min.js"></script>
-
-<script src="https://cdn.jsdelivr.net/npm/persian-date@1.1.0/dist/persian-date.min.js"></script>
-
-<script src="https://cdn.jsdelivr.net/npm/persian-datepicker@1.2.0/dist/js/persian-datepicker.min.js"></script>
-
-
-
 <script>
 
 
-// =====================================================
-// آدرس Google Apps Script
-// =====================================================
+/*
+================================================
+آدرس Google Apps Script
+================================================
+*/
 
 const GOOGLE_SCRIPT_URL =
-    "https://script.google.com/macros/s/AKfycbzn111x1wlJU2ey4WT-q8I7OIZvMyhyK_MlbZST98TCWJ4wix5w8hq4khaDiJPL_I39/exec";
+"https://script.google.com/macros/s/AKfycbzn111x1wlJU2ey4WT-q8I7OIZvMyhyK_MlbZST98TCWJ4wix5w8hq4khaDiJPL_I39/exec";
 
 
-// =====================================================
-// متغیرهای سیستم
-// =====================================================
+/*
+================================================
+متغیرها
+================================================
+*/
 
 let selectedService = "";
 
@@ -770,102 +665,213 @@ let selectedTime = "";
 let loadingTimes = false;
 
 
-// =====================================================
-// گرفتن عناصر صفحه
-// =====================================================
+/*
+================================================
+عناصر
+================================================
+*/
 
-const services =
-    document.querySelectorAll(".service");
-
-
-const persianDateInput =
-    document.getElementById(
-        "persianDate"
-    );
+const serviceButtons =
+document.querySelectorAll(
+    ".service"
+);
 
 
-const dateInput =
-    document.getElementById(
-        "date"
-    );
+const datePicker =
+document.getElementById(
+    "date"
+);
 
 
-const timesContainer =
-    document.getElementById(
-        "times"
-    );
+const persianDate =
+document.getElementById(
+    "persianDate"
+);
+
+
+const dateText =
+document.getElementById(
+    "dateText"
+);
+
+
+const times =
+document.getElementById(
+    "times"
+);
 
 
 const nameInput =
-    document.getElementById(
-        "customerName"
-    );
+document.getElementById(
+    "customerName"
+);
 
 
 const phoneInput =
-    document.getElementById(
-        "phone"
-    );
+document.getElementById(
+    "phone"
+);
 
 
 const submitButton =
-    document.getElementById(
-        "submitButton"
-    );
+document.getElementById(
+    "submitButton"
+);
 
 
-const messageBox =
-    document.getElementById(
-        "message"
-    );
+const message =
+document.getElementById(
+    "message"
+);
 
 
-// =====================================================
-// نمایش پیام
-// =====================================================
+/*
+================================================
+امروز
+================================================
+*/
 
-function showMessage(
-    text,
-    type
+const today =
+new Date();
+
+
+const todayISO =
+today
+    .toISOString()
+    .split("T")[0];
+
+
+datePicker.min =
+todayISO;
+
+
+/*
+================================================
+تبدیل میلادی به شمسی
+================================================
+*/
+
+function toPersianDate(
+    dateString
 ) {
 
-    messageBox.textContent =
-        text;
+
+    if (!dateString) {
+
+        return "";
+
+    }
 
 
-    messageBox.className =
-        "message " + type;
+    const parts =
+        dateString.split("-");
+
+
+    const year =
+        Number(parts[0]);
+
+
+    const month =
+        Number(parts[1]);
+
+
+    const day =
+        Number(parts[2]);
+
+
+    const date =
+        new Date(
+            year,
+            month - 1,
+            day
+        );
+
+
+    const formatter =
+        new Intl.DateTimeFormat(
+            "fa-IR-u-ca-persian",
+            {
+                year: "numeric",
+                month: "2-digit",
+                day: "2-digit"
+            }
+        );
+
+
+    return formatter.format(date);
 
 }
 
 
-// =====================================================
-// حذف پیام
-// =====================================================
+/*
+================================================
+باز کردن تاریخ‌گیر
+================================================
+*/
 
-function clearMessage() {
+persianDate.addEventListener(
+    "click",
+    function() {
 
-    messageBox.textContent = "";
+        datePicker.showPicker();
 
-    messageBox.className =
-        "message";
-
-}
+    }
+);
 
 
-// =====================================================
-// انتخاب خدمت
-// =====================================================
+/*
+================================================
+انتخاب تاریخ
+================================================
+*/
 
-services.forEach(
-    service => {
+datePicker.addEventListener(
+    "change",
+    function() {
 
-        service.addEventListener(
+
+        if (!datePicker.value) {
+
+            return;
+
+        }
+
+
+        dateText.textContent =
+            toPersianDate(
+                datePicker.value
+            );
+
+
+        persianDate.classList.remove(
+            "empty"
+        );
+
+
+        selectedTime = "";
+
+
+        loadTimes();
+
+    }
+);
+
+
+/*
+================================================
+انتخاب خدمت
+================================================
+*/
+
+serviceButtons.forEach(
+    button => {
+
+        button.addEventListener(
             "click",
             function() {
 
 
-                services.forEach(
+                serviceButtons.forEach(
                     item => {
 
                         item.classList.remove(
@@ -876,16 +882,13 @@ services.forEach(
                 );
 
 
-                service.classList.add(
+                button.classList.add(
                     "selected"
                 );
 
 
                 selectedService =
-                    service.dataset.service;
-
-
-                clearMessage();
+                    button.dataset.service;
 
 
                 checkForm();
@@ -897,124 +900,43 @@ services.forEach(
 );
 
 
-// =====================================================
-// تقویم شمسی
-// =====================================================
+/*
+================================================
+نمایش پیام
+================================================
+*/
 
-$("#persianDate").pDatepicker({
+function showMessage(
+    text,
+    type
+) {
 
-    format: "YYYY/MM/DD",
+    message.textContent =
+        text;
 
-    autoClose: true,
+    message.className =
+        "message " + type;
 
-    initialValue: false,
-
-    observer: true,
-
-    calendar: {
-
-        persian: {
-
-            locale: "fa",
-
-            showHint: false
-
-        }
-
-    },
-
-    toolbox: {
-
-        enabled: true,
-
-        todayButton: {
-
-            enabled: true,
-
-            text: {
-
-                fa: "امروز"
-
-            }
-
-        }
-
-    },
-
-    onSelect: function(unixDate) {
+}
 
 
-        clearMessage();
-
-
-        selectedTime = "";
-
-
-        /*
-            تبدیل تاریخ شمسی
-            به تاریخ میلادی
-        */
-
-        const selected =
-            new persianDate(
-                unixDate
-            );
-
-
-        const gregorianDate =
-            selected
-                .toCalendar("gregorian")
-                .format("YYYY-MM-DD");
-
-
-        /*
-            ذخیره تاریخ میلادی
-            در input مخفی
-        */
-
-        dateInput.value =
-            gregorianDate;
-
-
-        /*
-            دریافت ساعت‌های آزاد
-        */
-
-        loadTimes();
-
-
-    }
-
-});
-
-
-// =====================================================
-// دریافت ساعت‌های آزاد
-// =====================================================
+/*
+================================================
+دریافت ساعت‌ها
+================================================
+*/
 
 async function loadTimes() {
 
 
     const date =
-        dateInput.value;
-
-
-    selectedTime = "";
-
-
-    checkForm();
+        datePicker.value;
 
 
     if (!date) {
 
-        timesContainer.innerHTML =
-        `
-            <div class="loading">
-                ابتدا تاریخ را انتخاب کنید
-            </div>
-        `;
-
         return;
+
     }
 
 
@@ -1028,10 +950,16 @@ async function loadTimes() {
     loadingTimes = true;
 
 
-    timesContainer.innerHTML =
+    selectedTime = "";
+
+
+    checkForm();
+
+
+    times.innerHTML =
     `
         <div class="loading">
-            در حال دریافت ساعت‌های آزاد...
+            در حال بررسی نوبت‌های آزاد...
         </div>
     `;
 
@@ -1057,16 +985,6 @@ async function loadTimes() {
             );
 
 
-        if (!response.ok) {
-
-            throw new Error(
-                "HTTP " +
-                response.status
-            );
-
-        }
-
-
         const data =
             await response.json();
 
@@ -1074,15 +992,17 @@ async function loadTimes() {
         if (!data.success) {
 
             throw new Error(
-                data.message ||
-                "خطا در دریافت ساعت‌ها"
+                data.message
+                ||
+                "خطا"
             );
 
         }
 
 
         renderTimes(
-            data.times || []
+            data.allTimes || [],
+            data.reservedTimes || []
         );
 
 
@@ -1090,68 +1010,63 @@ async function loadTimes() {
     catch(error) {
 
 
-        console.error(
-            "Times error:",
-            error
-        );
+        console.error(error);
 
 
-        timesContainer.innerHTML =
+        times.innerHTML =
         `
             <div class="empty">
-                دریافت ساعت‌ها با خطا مواجه شد.
+
+                دریافت ساعت‌ها انجام نشد.
+
                 <br>
+
                 دوباره تلاش کنید.
+
             </div>
         `;
 
-
     }
-    finally {
 
 
-        loadingTimes = false;
+    loadingTimes = false;
 
 
-        checkForm();
-
-    }
+    checkForm();
 
 }
 
 
-// =====================================================
-// نمایش ساعت‌ها
-// =====================================================
+/*
+================================================
+نمایش ساعت‌ها
+================================================
+*/
 
 function renderTimes(
-    times
+    allTimes,
+    reservedTimes
 ) {
 
 
-    timesContainer.innerHTML =
-        "";
+    times.innerHTML = "";
 
 
-    if (!times.length) {
+    if (!allTimes.length) {
 
-
-        timesContainer.innerHTML =
+        times.innerHTML =
         `
             <div class="empty">
-                برای این تاریخ
-                <br>
-                ساعت خالی وجود ندارد.
+                ساعتی تعریف نشده است.
             </div>
         `;
-
 
         return;
 
     }
 
 
-    times.forEach(
+    allTimes.forEach(
         time => {
 
 
@@ -1173,45 +1088,74 @@ function renderTimes(
                 time;
 
 
-            button.addEventListener(
-                "click",
-                function() {
+            /*
+            ====================================
+            اگر رزرو شده باشد
+            ====================================
+            */
+
+            if (
+                reservedTimes.includes(
+                    time
+                )
+            ) {
 
 
-                    document
-                        .querySelectorAll(
-                            ".time"
-                        )
-                        .forEach(
-                            item => {
+                button.classList.add(
+                    "reserved"
+                );
 
-                                item.classList.remove(
-                                    "selected"
-                                );
 
-                            }
+                button.disabled =
+                    true;
+
+
+                button.title =
+                    "این ساعت قبلاً رزرو شده است.";
+
+
+            }
+            else {
+
+
+                button.addEventListener(
+                    "click",
+                    function() {
+
+
+                        document
+                            .querySelectorAll(
+                                ".time"
+                            )
+                            .forEach(
+                                item => {
+
+                                    item.classList.remove(
+                                        "selected"
+                                    );
+
+                                }
+                            );
+
+
+                        button.classList.add(
+                            "selected"
                         );
 
 
-                    button.classList.add(
-                        "selected"
-                    );
+                        selectedTime =
+                            time;
 
 
-                    selectedTime =
-                        time;
+                        checkForm();
+
+                    }
+                );
+
+            }
 
 
-                    clearMessage();
-
-
-                    checkForm();
-
-                }
-            );
-
-
-            timesContainer.appendChild(
+            times.appendChild(
                 button
             );
 
@@ -1221,9 +1165,11 @@ function renderTimes(
 }
 
 
-// =====================================================
-// بررسی فرم
-// =====================================================
+/*
+================================================
+بررسی فرم
+================================================
+*/
 
 function checkForm() {
 
@@ -1245,7 +1191,7 @@ function checkForm() {
     submitButton.disabled =
         !(
             selectedService &&
-            dateInput.value &&
+            datePicker.value &&
             selectedTime &&
             name &&
             validPhone &&
@@ -1255,32 +1201,28 @@ function checkForm() {
 }
 
 
-// =====================================================
-// تغییر نام
-// =====================================================
+/*
+================================================
+نام
+================================================
+*/
 
 nameInput.addEventListener(
     "input",
-    function() {
-
-        checkForm();
-
-    }
+    checkForm
 );
 
 
-// =====================================================
-// تغییر شماره
-// =====================================================
+/*
+================================================
+شماره موبایل
+================================================
+*/
 
 phoneInput.addEventListener(
     "input",
     function() {
 
-
-        /*
-            فقط عدد قبول کن
-        */
 
         phoneInput.value =
             phoneInput.value.replace(
@@ -1295,9 +1237,11 @@ phoneInput.addEventListener(
 );
 
 
-// =====================================================
-// ثبت نوبت
-// =====================================================
+/*
+================================================
+ثبت نوبت
+================================================
+*/
 
 submitButton.addEventListener(
     "click",
@@ -1317,10 +1261,6 @@ async function bookAppointment() {
     }
 
 
-    /*
-        اطلاعات قبل از ارسال
-    */
-
     const customerName =
         nameInput.value.trim();
 
@@ -1334,29 +1274,11 @@ async function bookAppointment() {
 
 
     const date =
-        dateInput.value;
+        datePicker.value;
 
 
     const time =
         selectedTime;
-
-
-    if (
-        !customerName ||
-        !/^09\d{9}$/.test(phone) ||
-        !service ||
-        !date ||
-        !time
-    ) {
-
-        showMessage(
-            "لطفاً اطلاعات را کامل وارد کنید.",
-            "error"
-        );
-
-        return;
-
-    }
 
 
     submitButton.disabled =
@@ -1364,10 +1286,7 @@ async function bookAppointment() {
 
 
     submitButton.textContent =
-        "در حال ثبت نوبت...";
-
-
-    clearMessage();
+        "در حال ثبت...";
 
 
     try {
@@ -1415,26 +1334,15 @@ async function bookAppointment() {
 
         const response =
             await fetch(
-
                 GOOGLE_SCRIPT_URL +
                 "?" +
-                params.toString(),
-
+                params.toString() +
+                "&t=" +
+                Date.now(),
                 {
                     cache: "no-store"
                 }
-
             );
-
-
-        if (!response.ok) {
-
-            throw new Error(
-                "HTTP " +
-                response.status
-            );
-
-        }
 
 
         const data =
@@ -1442,8 +1350,9 @@ async function bookAppointment() {
 
 
         /*
-            اگر ساعت قبلاً
-            توسط شخص دیگری گرفته شده
+        ========================================
+        اگر قبلاً رزرو شده
+        ========================================
         */
 
         if (!data.success) {
@@ -1451,14 +1360,13 @@ async function bookAppointment() {
 
             showMessage(
                 data.message ||
-                "ثبت نوبت انجام نشد.",
+                "این ساعت قبلاً رزرو شده است.",
                 "error"
             );
 
 
             /*
-                دوباره ساعت‌های آزاد
-                را دریافت کن
+            ساعت‌ها را مجدداً بگیر
             */
 
             await loadTimes();
@@ -1470,7 +1378,9 @@ async function bookAppointment() {
 
 
         /*
-            موفقیت
+        ========================================
+        موفق
+        ========================================
         */
 
         showMessage(
@@ -1479,45 +1389,30 @@ async function bookAppointment() {
         );
 
 
-        /*
-            پاک کردن فرم
-        */
+        nameInput.value = "";
 
-        nameInput.value =
-            "";
+        phoneInput.value = "";
 
-
-        phoneInput.value =
-            "";
-
-
-        selectedTime =
-            "";
+        selectedTime = "";
 
 
         /*
-            ساعت‌های آزاد
-            دوباره دریافت شوند
+        ساعت رزروشده فوراً
+        غیرفعال می‌شود
         */
 
         await loadTimes();
-
-
-        checkForm();
 
 
     }
     catch(error) {
 
 
-        console.error(
-            "Booking error:",
-            error
-        );
+        console.error(error);
 
 
         showMessage(
-            "خطا در اتصال به سیستم. دوباره تلاش کنید.",
+            "خطا در اتصال به سیستم.",
             "error"
         );
 
@@ -1534,7 +1429,6 @@ async function bookAppointment() {
 
 
 </script>
-
 
 </body>
 
