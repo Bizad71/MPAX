@@ -6,627 +6,705 @@
 <meta charset="UTF-8">
 
 <meta
-    name="viewport"
-    content="width=device-width, initial-scale=1.0"
+  name="viewport"
+  content="width=device-width, initial-scale=1.0"
 >
 
 <title>MESTER PAX</title>
 
+
 <style>
 
 * {
-    box-sizing: border-box;
+  box-sizing: border-box;
 }
+
 
 body {
 
-    margin: 0;
+  margin: 0;
 
-    min-height: 100vh;
+  min-height: 100vh;
 
-    background:
-        radial-gradient(
-            circle at top,
-            #292929 0%,
-            #111 45%,
-            #070707 100%
-        );
+  background:
+    radial-gradient(
+      circle at top,
+      #292929 0%,
+      #111 45%,
+      #070707 100%
+    );
 
-    color: #fff;
+  color: #fff;
 
-    font-family:
-        Tahoma,
-        Arial,
-        sans-serif;
+  font-family:
+    Tahoma,
+    Arial,
+    sans-serif;
+
 }
+
 
 .container {
 
-    width: 100%;
+  width: 100%;
 
-    max-width: 520px;
+  max-width: 520px;
 
-    margin: auto;
+  margin: auto;
 
-    padding:
-        20px 15px 50px;
+  padding:
+    20px 15px 50px;
+
 }
+
 
 .logo {
 
-    text-align: center;
+  text-align: center;
 
-    padding:
-        28px 0 25px;
+  padding:
+    28px 0 25px;
+
 }
+
 
 .logo h1 {
 
-    margin: 0;
+  margin: 0;
 
-    font-size: 38px;
+  font-size: 38px;
 
-    letter-spacing: 4px;
+  letter-spacing: 4px;
+
 }
+
 
 .logo p {
 
-    margin:
-        10px 0 0;
+  margin:
+    10px 0 0;
 
-    color: #888;
+  color: #888;
 
-    font-size: 13px;
+  font-size: 13px;
+
 }
+
 
 .card {
 
-    background: #171717;
+  background: #171717;
 
-    border:
-        1px solid #2b2b2b;
+  border:
+    1px solid #2b2b2b;
 
-    border-radius: 20px;
+  border-radius: 20px;
 
-    padding: 20px;
+  padding: 20px;
 
-    margin-bottom: 16px;
+  margin-bottom: 16px;
+
 }
+
 
 .title {
 
-    font-size: 18px;
+  font-size: 18px;
 
-    font-weight: bold;
+  font-weight: bold;
 
-    margin-bottom: 17px;
+  margin-bottom: 17px;
+
 }
 
-
-/* خدمات */
 
 .services {
 
-    display: grid;
+  display: grid;
 
-    gap: 10px;
+  gap: 10px;
+
 }
+
 
 .service {
 
-    width: 100%;
+  width: 100%;
 
-    border:
-        1px solid #333;
+  border:
+    1px solid #333;
 
-    background: #222;
+  background: #222;
 
-    color: #fff;
+  color: #fff;
 
-    border-radius: 12px;
+  border-radius: 12px;
 
-    min-height: 52px;
+  min-height: 52px;
 
-    font-family: inherit;
+  font-family: inherit;
 
-    text-align: right;
+  text-align: right;
 
-    padding: 0 16px;
+  padding: 0 16px;
 
-    cursor: pointer;
+  cursor: pointer;
 
-    font-size: 14px;
+  font-size: 14px;
+
 }
+
 
 .service.selected {
 
-    background: #fff;
+  background: #fff;
 
-    color: #000;
+  color: #000;
 
-    border-color: #fff;
+  border-color: #fff;
 
-    font-weight: bold;
+  font-weight: bold;
+
 }
 
-
-/* تقویم */
 
 .calendar {
 
-    background: #111;
+  background: #111;
 
-    border:
-        1px solid #292929;
+  border:
+    1px solid #292929;
 
-    border-radius: 17px;
+  border-radius: 17px;
 
-    overflow: hidden;
+  overflow: hidden;
+
 }
+
 
 .calendar-header {
 
-    display: flex;
+  display: flex;
 
-    align-items: center;
+  align-items: center;
 
-    justify-content: space-between;
+  justify-content: space-between;
 
-    padding: 14px;
+  padding: 14px;
 
-    border-bottom:
-        1px solid #292929;
+  border-bottom:
+    1px solid #292929;
+
 }
+
 
 .calendar-title {
 
-    text-align: center;
+  text-align: center;
 
-    font-size: 15px;
+  font-size: 15px;
 
-    font-weight: bold;
+  font-weight: bold;
+
 }
+
 
 .calendar-nav {
 
-    width: 38px;
+  width: 38px;
 
-    height: 38px;
+  height: 38px;
 
-    border: none;
+  border: none;
 
-    border-radius: 10px;
+  border-radius: 10px;
 
-    background: #242424;
+  background: #242424;
 
-    color: white;
+  color: white;
 
-    font-size: 20px;
+  font-size: 20px;
 
-    cursor: pointer;
+  cursor: pointer;
+
 }
+
 
 .weekdays {
 
-    display: grid;
+  display: grid;
 
-    grid-template-columns:
-        repeat(7, 1fr);
+  grid-template-columns:
+    repeat(7, 1fr);
 
-    padding:
-        10px 7px 5px;
+  padding:
+    10px 7px 5px;
 
-    color: #777;
+  color: #777;
 
-    font-size: 11px;
+  font-size: 11px;
 
-    text-align: center;
+  text-align: center;
+
 }
+
 
 .days {
 
-    display: grid;
+  display: grid;
 
-    grid-template-columns:
-        repeat(7, 1fr);
+  grid-template-columns:
+    repeat(7, 1fr);
 
-    gap: 5px;
+  gap: 5px;
 
-    padding:
-        5px 7px 12px;
+  padding:
+    5px 7px 12px;
+
 }
+
 
 .day {
 
-    aspect-ratio: 1 / 1;
+  aspect-ratio: 1 / 1;
 
-    min-width: 0;
+  min-width: 0;
 
-    border: none;
+  border: none;
 
-    border-radius: 10px;
+  border-radius: 10px;
 
-    background: #1d1d1d;
+  background: #1d1d1d;
 
-    color: #eee;
+  color: #eee;
 
-    font-family: inherit;
+  font-family: inherit;
 
-    cursor: pointer;
+  cursor: pointer;
 
-    font-size: 13px;
+  font-size: 13px;
+
 }
+
 
 .day:hover {
 
-    background: #333;
+  background: #333;
+
 }
+
 
 .day.empty {
 
-    background: transparent;
+  background: transparent;
 
-    cursor: default;
+  cursor: default;
+
 }
+
 
 .day.today {
 
-    border:
-        1px solid #777;
+  border:
+    1px solid #777;
+
 }
+
 
 .day.selected {
 
-    background: #fff;
+  background: #fff;
 
-    color: #000;
+  color: #000;
 
-    font-weight: bold;
+  font-weight: bold;
+
 }
+
 
 .day.disabled {
 
-    color: #444;
+  color: #444;
 
-    background: #151515;
+  background: #151515;
 
-    cursor: not-allowed;
+  cursor: not-allowed;
+
 }
 
-
-/* جمعه */
 
 .day.friday {
 
-    background: #251515;
+  color: #444;
 
-    color: #555;
+  background: #101010;
 
-    cursor: not-allowed;
+  cursor: not-allowed;
+
 }
+
 
 .selected-date {
 
-    text-align: center;
+  text-align: center;
 
-    padding:
-        12px 10px 0;
+  padding:
+    12px 10px 0;
 
-    color: #bbb;
+  color: #bbb;
 
-    font-size: 13px;
+  font-size: 13px;
+
 }
 
-
-/* ساعت‌ها */
 
 .times {
 
-    display: grid;
+  display: grid;
 
-    grid-template-columns:
-        repeat(2, 1fr);
+  grid-template-columns:
+    repeat(2, 1fr);
 
-    gap: 10px;
+  gap: 10px;
 
-    margin-top: 16px;
+  margin-top: 16px;
+
 }
+
 
 .time {
 
-    min-height: 50px;
+  min-height: 50px;
 
-    border:
-        1px solid #333;
+  border:
+    1px solid #333;
 
-    background: #222;
+  background: #222;
 
-    color: #fff;
+  color: #fff;
 
-    border-radius: 12px;
+  border-radius: 12px;
 
-    font-family: inherit;
+  font-family: inherit;
 
-    font-size: 15px;
+  font-size: 15px;
 
-    cursor: pointer;
+  cursor: pointer;
+
 }
+
 
 .time.selected {
 
-    background: #fff;
+  background: #fff;
 
-    color: #000;
+  color: #000;
 
-    border-color: #fff;
+  border-color: #fff;
 
-    font-weight: bold;
+  font-weight: bold;
+
 }
+
 
 .time.reserved {
 
-    background: #351b1b;
+  background: #351b1b;
 
-    color: #777;
+  color: #777;
 
-    border-color: #4b2828;
+  border-color: #4b2828;
 
-    cursor: not-allowed;
+  cursor: not-allowed;
 
-    text-decoration: line-through;
+  text-decoration: line-through;
+
 }
+
 
 .loading {
 
-    grid-column:
-        1 / -1;
+  grid-column:
+    1 / -1;
 
-    text-align: center;
+  text-align: center;
 
-    color: #777;
+  color: #777;
 
-    padding: 20px 5px;
+  padding: 20px 5px;
 
-    font-size: 13px;
+  font-size: 13px;
+
 }
+
 
 .no-times {
 
-    grid-column:
-        1 / -1;
+  grid-column:
+    1 / -1;
 
-    text-align: center;
+  text-align: center;
 
-    color: #777;
+  color: #777;
 
-    padding: 20px 5px;
+  padding: 20px 5px;
 
-    font-size: 13px;
+  font-size: 13px;
 
-    line-height: 2;
+  line-height: 2;
+
 }
 
-
-/* فرم */
 
 .label {
 
-    display: block;
+  display: block;
 
-    color: #888;
+  color: #888;
 
-    font-size: 12px;
+  font-size: 12px;
 
-    margin:
-        0 0 7px;
+  margin:
+    0 0 7px;
+
 }
+
 
 input {
 
-    width: 100%;
+  width: 100%;
 
-    height: 50px;
+  height: 50px;
 
-    margin-bottom: 15px;
+  margin-bottom: 15px;
 
-    padding:
-        0 14px;
+  padding:
+    0 14px;
 
-    border:
-        1px solid #333;
+  border:
+    1px solid #333;
 
-    border-radius: 12px;
+  border-radius: 12px;
 
-    background: #222;
+  background: #222;
 
-    color: #fff;
+  color: #fff;
 
-    outline: none;
+  outline: none;
 
-    font-family: inherit;
+  font-family: inherit;
 
-    font-size: 14px;
+  font-size: 14px;
+
 }
+
 
 input:focus {
 
-    border-color: #777;
+  border-color: #777;
+
 }
+
 
 .submit {
 
-    width: 100%;
+  width: 100%;
 
-    height: 54px;
+  height: 54px;
 
-    margin-top: 3px;
+  margin-top: 3px;
 
-    border: none;
+  border: none;
 
-    border-radius: 13px;
+  border-radius: 13px;
 
-    background: #fff;
+  background: #fff;
 
-    color: #000;
+  color: #000;
 
-    font-family: inherit;
+  font-family: inherit;
 
-    font-size: 16px;
+  font-size: 16px;
 
-    font-weight: bold;
+  font-weight: bold;
 
-    cursor: pointer;
+  cursor: pointer;
+
 }
+
 
 .submit:disabled {
 
-    opacity: .35;
+  opacity: .35;
 
-    cursor: not-allowed;
+  cursor: not-allowed;
+
 }
 
-
-/* پیام */
 
 .message {
 
-    display: none;
+  display: none;
 
-    padding: 14px;
+  padding: 14px;
 
-    border-radius: 12px;
+  border-radius: 12px;
 
-    margin-bottom: 15px;
+  margin-bottom: 15px;
 
-    text-align: center;
+  text-align: center;
 
-    font-size: 13px;
+  font-size: 13px;
 
-    line-height: 2;
+  line-height: 1.8;
+
 }
+
 
 .message.success {
 
-    display: block;
+  display: block;
 
-    background: #12351e;
+  background: #12351e;
 
-    color: #8eeaa2;
+  color: #8eeaa2;
+
 }
+
 
 .message.error {
 
-    display: block;
+  display: block;
 
-    background: #401b1b;
+  background: #401b1b;
 
-    color: #ff9b9b;
+  color: #ff9b9b;
+
 }
+
 
 .message.pending {
 
-    display: block;
+  display: block;
 
-    background: #302b12;
+  background: #332c13;
 
-    color: #eadc87;
-}
+  color: #f1d878;
 
-.message.cancelled {
-
-    display: block;
-
-    background: #401b1b;
-
-    color: #ff9b9b;
 }
 
 
-/* وضعیت نوبت */
+.status-card {
 
-.booking-status {
+  display: none;
 
-    display: none;
+  text-align: center;
 
-    text-align: center;
-
-    margin-top: 15px;
-
-    padding: 15px;
-
-    border-radius: 14px;
-
-    line-height: 2;
-
-    font-size: 13px;
 }
 
-.booking-status.pending {
 
-    display: block;
+.status-card.show {
 
-    background: #302b12;
+  display: block;
 
-    color: #eadc87;
 }
 
-.booking-status.success {
 
-    display: block;
+.status-icon {
 
-    background: #12351e;
+  font-size: 42px;
 
-    color: #8eeaa2;
+  margin-bottom: 10px;
+
 }
 
-.booking-status.cancelled {
 
-    display: block;
+.status-title {
 
-    background: #401b1b;
+  font-size: 18px;
 
-    color: #ff9b9b;
+  font-weight: bold;
+
+  margin-bottom: 8px;
+
 }
 
-.booking-id {
 
-    display: block;
+.status-text {
 
-    direction: ltr;
+  color: #999;
 
-    margin-top: 5px;
+  font-size: 13px;
 
-    font-size: 12px;
+  line-height: 2;
 
-    opacity: .7;
 }
+
+
+.status-id {
+
+  margin-top: 15px;
+
+  direction: ltr;
+
+  font-size: 12px;
+
+  color: #777;
+
+}
+
+
+.new-booking {
+
+  width: 100%;
+
+  height: 48px;
+
+  border: 1px solid #333;
+
+  border-radius: 12px;
+
+  background: #222;
+
+  color: #fff;
+
+  font-family: inherit;
+
+  cursor: pointer;
+
+  margin-top: 15px;
+
+}
+
 
 footer {
 
-    text-align: center;
+  text-align: center;
 
-    color: #555;
+  color: #555;
 
-    font-size: 11px;
+  font-size: 11px;
 
-    line-height: 2;
+  line-height: 2;
 
-    margin-top: 20px;
+  margin-top: 20px;
+
 }
+
 
 @media(max-width:380px) {
 
-    .logo h1 {
+  .logo h1 {
 
-        font-size: 30px;
+    font-size: 30px;
 
-    }
+  }
 
-    .day {
+  .day {
 
-        font-size: 11px;
+    font-size: 11px;
 
-    }
+  }
 
 }
 
@@ -643,198 +721,271 @@ footer {
 
 <div class="logo">
 
-    <h1>MESTER PAX</h1>
+  <h1>MESTER PAX</h1>
 
-    <p>
-        مدیریت یوسف قربانی
-    </p>
+  <p>
+    مدیریت یوسف قربانی
+  </p>
 
 </div>
 
 
 <div
-    id="message"
-    class="message"
+  id="message"
+  class="message"
 ></div>
 
 
-<!-- خدمات -->
+<!-- =====================================
+     وضعیت نوبت
+===================================== -->
 
-<div class="card">
+<div
+  id="statusCard"
+  class="card status-card"
+>
 
-    <div class="title">
-        انتخاب خدمت
-    </div>
-
-    <div class="services">
-
-        <button
-            type="button"
-            class="service"
-            data-service="کوتاهی مو"
-        >
-            کوتاهی مو
-        </button>
-
-        <button
-            type="button"
-            class="service"
-            data-service="اصلاح ریش"
-        >
-            اصلاح ریش
-        </button>
-
-        <button
-            type="button"
-            class="service"
-            data-service="کوتاهی + اصلاح ریش"
-        >
-            کوتاهی + اصلاح ریش
-        </button>
-
-    </div>
-
-</div>
+  <div
+    id="statusIcon"
+    class="status-icon"
+  >
+    ⏳
+  </div>
 
 
-<!-- تقویم -->
-
-<div class="card">
-
-    <div class="title">
-        انتخاب تاریخ و ساعت
-    </div>
-
-
-    <div class="calendar">
-
-        <div class="calendar-header">
-
-            <button
-                type="button"
-                class="calendar-nav"
-                id="prevMonth"
-            >
-                ›
-            </button>
-
-            <div
-                class="calendar-title"
-                id="calendarTitle"
-            ></div>
-
-            <button
-                type="button"
-                class="calendar-nav"
-                id="nextMonth"
-            >
-                ‹
-            </button>
-
-        </div>
+  <div
+    id="statusTitle"
+    class="status-title"
+  >
+    در انتظار تأیید مدیر
+  </div>
 
 
-        <div class="weekdays">
-
-            <div>شنبه</div>
-            <div>یکشنبه</div>
-            <div>دوشنبه</div>
-            <div>سه‌شنبه</div>
-            <div>چهارشنبه</div>
-            <div>پنجشنبه</div>
-            <div>جمعه</div>
-
-        </div>
+  <div
+    id="statusText"
+    class="status-text"
+  >
+    نوبت شما ثبت شده است.
+    <br>
+    منتظر تأیید مدیر باشید.
+  </div>
 
 
-        <div
-            class="days"
-            id="days"
-        ></div>
-
-    </div>
+  <div
+    id="statusId"
+    class="status-id"
+  ></div>
 
 
-    <div
-        class="selected-date"
-        id="selectedDateText"
-    >
-        تاریخ انتخاب نشده
-    </div>
-
-
-    <div
-        class="times"
-        id="times"
-    >
-
-        <div class="no-times">
-            ابتدا یک تاریخ را انتخاب کنید
-        </div>
-
-    </div>
+  <button
+    type="button"
+    id="newBookingButton"
+    class="new-booking"
+  >
+    ثبت نوبت جدید
+  </button>
 
 </div>
 
 
-<!-- اطلاعات مشتری -->
+<div id="bookingArea">
+
+
+<!-- =====================================
+     خدمات
+===================================== -->
 
 <div class="card">
 
-    <div class="title">
-        اطلاعات مشتری
-    </div>
+  <div class="title">
+    انتخاب خدمت
+  </div>
 
 
-    <label class="label">
-        نام مشتری
-    </label>
-
-    <input
-        id="customerName"
-        type="text"
-        placeholder="مثلاً علی رضایی"
-    >
-
-
-    <label class="label">
-        شماره موبایل
-    </label>
-
-    <input
-        id="phone"
-        type="tel"
-        inputmode="numeric"
-        maxlength="11"
-        placeholder="09123456789"
-    >
+  <div class="services">
 
 
     <button
-        type="button"
-        id="submitButton"
-        class="submit"
-        disabled
+      type="button"
+      class="service"
+      data-service="کوتاهی مو"
     >
-        ثبت نوبت
+      کوتاهی مو
     </button>
 
 
+    <button
+      type="button"
+      class="service"
+      data-service="اصلاح ریش"
+    >
+      اصلاح ریش
+    </button>
+
+
+    <button
+      type="button"
+      class="service"
+      data-service="کوتاهی + اصلاح ریش"
+    >
+      کوتاهی + اصلاح ریش
+    </button>
+
+
+  </div>
+
+</div>
+
+
+<!-- =====================================
+     تقویم
+===================================== -->
+
+<div class="card">
+
+  <div class="title">
+    انتخاب تاریخ و ساعت
+  </div>
+
+
+  <div class="calendar">
+
+
+    <div class="calendar-header">
+
+
+      <button
+        type="button"
+        class="calendar-nav"
+        id="prevMonth"
+      >
+        ›
+      </button>
+
+
+      <div
+        class="calendar-title"
+        id="calendarTitle"
+      ></div>
+
+
+      <button
+        type="button"
+        class="calendar-nav"
+        id="nextMonth"
+      >
+        ‹
+      </button>
+
+
+    </div>
+
+
+    <div class="weekdays">
+
+      <div>شنبه</div>
+      <div>یکشنبه</div>
+      <div>دوشنبه</div>
+      <div>سه‌شنبه</div>
+      <div>چهارشنبه</div>
+      <div>پنجشنبه</div>
+      <div>جمعه</div>
+
+    </div>
+
+
     <div
-        id="bookingStatus"
-        class="booking-status"
+      class="days"
+      id="days"
     ></div>
+
+
+  </div>
+
+
+  <div
+    class="selected-date"
+    id="selectedDateText"
+  >
+    تاریخ انتخاب نشده
+  </div>
+
+
+  <div
+    class="times"
+    id="times"
+  >
+
+    <div class="no-times">
+
+      ابتدا یک تاریخ را انتخاب کنید
+
+    </div>
+
+  </div>
+
+</div>
+
+
+<!-- =====================================
+     اطلاعات مشتری
+===================================== -->
+
+<div class="card">
+
+  <div class="title">
+    اطلاعات مشتری
+  </div>
+
+
+  <label class="label">
+    نام مشتری
+  </label>
+
+
+  <input
+    id="customerName"
+    type="text"
+    placeholder="مثلاً علی رضایی"
+  >
+
+
+  <label class="label">
+    شماره موبایل
+  </label>
+
+
+  <input
+    id="phone"
+    type="tel"
+    inputmode="numeric"
+    maxlength="11"
+    placeholder="09123456789"
+  >
+
+
+  <button
+    type="button"
+    id="submitButton"
+    class="submit"
+    disabled
+  >
+    ثبت نوبت
+  </button>
+
+</div>
+
 
 </div>
 
 
 <footer>
 
-    MESTER PAX
+  MESTER PAX
 
-    <br>
+  <br>
 
-    مدیریت یوسف قربانی
+  مدیریت یوسف قربانی
 
 </footer>
 
@@ -844,43 +995,57 @@ footer {
 
 <script>
 
-/* =========================================
-   آدرس Google Apps Script
-========================================= */
+
+/* =====================================
+   آدرس Apps Script
+===================================== */
 
 const GOOGLE_SCRIPT_URL =
-"https://script.google.com/macros/s/AKfycbzn111x1wlJU2ey4WT-q8I7OIZvMyhyK_MlbZST98TCWJ4wix5w8hq4khaDiJPL_I39/exec";
+  "https://script.google.com/macros/s/AKfycbzn111x1wlJU2ey4WT-q8I7OIZvMyhyK_MlbZST98TCWJ4wix5w8hq4khaDiJPL_I39/exec";
 
 
-/* =========================================
-   نام ماه‌ها
-========================================= */
+/* =====================================
+   اطلاعات تقویم
+===================================== */
 
 const monthNames = [
 
-    "فروردین",
-    "اردیبهشت",
-    "خرداد",
-    "تیر",
-    "مرداد",
-    "شهریور",
-    "مهر",
-    "آبان",
-    "آذر",
-    "دی",
-    "بهمن",
-    "اسفند"
+  "فروردین",
+  "اردیبهشت",
+  "خرداد",
+  "تیر",
+  "مرداد",
+  "شهریور",
+  "مهر",
+  "آبان",
+  "آذر",
+  "دی",
+  "بهمن",
+  "اسفند"
+
+];
+
+
+const weekdayNames = [
+
+  "شنبه",
+  "یکشنبه",
+  "دوشنبه",
+  "سه‌شنبه",
+  "چهارشنبه",
+  "پنجشنبه",
+  "جمعه"
 
 ];
 
 
 const persianDigits =
-"۰۱۲۳۴۵۶۷۸۹";
+  "۰۱۲۳۴۵۶۷۸۹";
 
 
-/* =========================================
+/* =====================================
    متغیرها
-========================================= */
+===================================== */
 
 let selectedService = "";
 
@@ -888,1691 +1053,2206 @@ let selectedTime = "";
 
 let selectedGregorianDate = "";
 
-let selectedPersianDate = null;
+let selectedPersianYear = 0;
 
-let calendarFirstGregorian = null;
+let selectedPersianMonth = 0;
+
+let selectedPersianDay = 0;
+
+let calendarYear = 0;
+
+let calendarMonth = 0;
 
 let loadingTimes = false;
-
-let bookingId = "";
 
 let statusTimer = null;
 
 
-/* =========================================
+/* =====================================
    تبدیل عدد به فارسی
-========================================= */
+===================================== */
 
 function toPersianDigits(value) {
 
-    return String(value).replace(
-        /\d/g,
-        function(digit) {
-
-            return persianDigits[
-                Number(digit)
-            ];
-
-        }
-    );
+  return String(value).replace(
+    /\d/g,
+    number =>
+      persianDigits[number]
+  );
 
 }
 
 
-/* =========================================
+/* =====================================
    تبدیل عدد فارسی به انگلیسی
-========================================= */
+===================================== */
 
 function toEnglishDigits(value) {
 
-    return String(value)
-        .replace(
-            /[۰-۹]/g,
-            function(digit) {
-
-                return String(
-                    persianDigits.indexOf(
-                        digit
-                    )
-                );
-
-            }
-        );
+  return String(value)
+    .replace(
+      /[۰-۹]/g,
+      digit =>
+        String(
+          persianDigits.indexOf(
+            digit
+          )
+        )
+    );
 
 }
 
 
-/* =========================================
-   تبدیل میلادی به شمسی
-========================================= */
+/* =====================================
+   تاریخ امروز شمسی
+===================================== */
 
-function gregorianToJalali(
-    gy,
-    gm,
-    gd
+function getTodayJalali() {
+
+  const now =
+    new Date();
+
+
+  const formatter =
+    new Intl.DateTimeFormat(
+      "fa-IR-u-ca-persian",
+      {
+        year:
+          "numeric",
+
+        month:
+          "numeric",
+
+        day:
+          "numeric"
+      }
+    );
+
+
+  const parts =
+    formatter.formatToParts(
+      now
+    );
+
+
+  let year = 0;
+
+  let month = 0;
+
+  let day = 0;
+
+
+  parts.forEach(
+    part => {
+
+      if (
+        part.type === "year"
+      ) {
+
+        year =
+          Number(
+            toEnglishDigits(
+              part.value
+            )
+          );
+
+      }
+
+
+      if (
+        part.type === "month"
+      ) {
+
+        month =
+          Number(
+            toEnglishDigits(
+              part.value
+            )
+          );
+
+      }
+
+
+      if (
+        part.type === "day"
+      ) {
+
+        day =
+          Number(
+            toEnglishDigits(
+              part.value
+            )
+          );
+
+      }
+
+    }
+  );
+
+
+  return {
+
+    year,
+    month,
+    day
+
+  };
+
+}
+
+
+/* =====================================
+   تبدیل شمسی به میلادی
+   با Intl
+===================================== */
+
+function jalaliToGregorian(
+  jy,
+  jm,
+  jd
 ) {
 
-    const gdm = [
-        0,
-        31,
-        59,
-        90,
-        120,
-        151,
-        181,
-        212,
-        243,
-        273,
-        304,
-        334
-    ];
+  /*
+   * سال شمسی تقریباً 621 سال
+   * با میلادی فاصله دارد.
+   *
+   * از حوالی 19 مارس شروع می‌کنیم
+   * و تاریخ مورد نظر را پیدا می‌کنیم.
+   */
+
+  const startYear =
+    jy + 621;
 
 
-    let jy =
-        gy > 1600
-            ? 979
-            : 0;
+  const start =
+    new Date(
+      startYear,
+      2,
+      19
+    );
 
 
-    let gy2 =
-        gy > 1600
-            ? gy - 1600
-            : gy - 621;
+  const target =
+    jy +
+    "-" +
+    jm +
+    "-" +
+    jd;
 
 
-    let gy3 =
-        gm > 2
-            ? gy2 + 1
-            : gy2;
+  for (
+    let i = 0;
+    i < 370;
+    i++
+  ) {
+
+    const current =
+      new Date(
+        start
+      );
 
 
-    let days =
-        365 * gy2;
+    current.setDate(
+      start.getDate() + i
+    );
 
 
-    days +=
-        Math.floor(
-            (gy3 + 3) / 4
-        );
+    const p =
+      getJalaliFromDate(
+        current
+      );
 
 
-    days -=
-        Math.floor(
-            (gy3 + 99) / 100
-        );
-
-
-    days +=
-        Math.floor(
-            (gy3 + 399) / 400
-        );
-
-
-    days += gd;
-
-    days += gdm[gm - 1];
+    const currentTarget =
+      p.year +
+      "-" +
+      p.month +
+      "-" +
+      p.day;
 
 
     if (
-        gm > 2 &&
-        (
-            gy % 4 === 0 &&
-            (
-                gy % 100 !== 0 ||
-                gy % 400 === 0
-            )
-        )
+      currentTarget ===
+      target
     ) {
 
-        days++;
-
-    }
-
-
-    days -= 79;
-
-
-    const jNp =
-        Math.floor(
-            days / 12053
-        );
-
-
-    days %= 12053;
-
-
-    jy +=
-        33 * jNp;
-
-
-    jy +=
-        4 *
-        Math.floor(
-            days / 1461
-        );
-
-
-    days %= 1461;
-
-
-    if (days >= 366) {
-
-        jy +=
-            Math.floor(
-                (days - 1) / 365
-            );
-
-        days =
-            (days - 1) % 365;
-
-    }
-
-
-    let jm;
-
-    let jd;
-
-
-    if (days < 186) {
-
-        jm =
-            1 +
-            Math.floor(
-                days / 31
-            );
-
-        jd =
-            1 +
-            days % 31;
-
-    }
-
-    else {
-
-        jm =
-            7 +
-            Math.floor(
-                (days - 186) / 30
-            );
-
-        jd =
-            1 +
-            ((days - 186) % 30);
-
-    }
-
-
-    return {
-
-        year: jy,
-
-        month: jm,
-
-        day: jd
-
-    };
-
-}
-
-
-/* =========================================
-   تاریخ امروز
-========================================= */
-
-function getToday() {
-
-    const now =
-        new Date();
-
-
-    return {
+      return {
 
         year:
-            now.getFullYear(),
+          current.getFullYear(),
 
         month:
-            now.getMonth() + 1,
+          current.getMonth() + 1,
 
         day:
-            now.getDate()
+          current.getDate()
 
-    };
-
-}
-
-
-/* =========================================
-   ISO
-========================================= */
-
-function dateToISO(date) {
-
-    return (
-        date.getFullYear() +
-        "-" +
-        String(
-            date.getMonth() + 1
-        ).padStart(2, "0") +
-        "-" +
-        String(
-            date.getDate()
-        ).padStart(2, "0")
-    );
-
-}
-
-
-/* =========================================
-   شروع ماه شمسی
-========================================= */
-
-function findPersianMonthStart(
-    date
-) {
-
-    const d =
-        new Date(date);
-
-
-    d.setHours(
-        12,
-        0,
-        0,
-        0
-    );
-
-
-    for (
-        let i = 0;
-        i < 32;
-        i++
-    ) {
-
-        const j =
-            gregorianToJalali(
-                d.getFullYear(),
-                d.getMonth() + 1,
-                d.getDate()
-            );
-
-
-        if (j.day === 1) {
-
-            return new Date(d);
-
-        }
-
-
-        d.setDate(
-            d.getDate() - 1
-        );
+      };
 
     }
 
+  }
 
-    return new Date(date);
+
+  return null;
 
 }
 
 
-/* =========================================
-   ماه بعد
-========================================= */
+/* =====================================
+   تبدیل میلادی به شمسی با Intl
+===================================== */
 
-function nextPersianMonthStart(
-    start
+function getJalaliFromDate(
+  date
 ) {
 
-    const d =
-        new Date(start);
+  const formatter =
+    new Intl.DateTimeFormat(
+      "fa-IR-u-ca-persian",
+      {
+        year:
+          "numeric",
 
+        month:
+          "numeric",
 
-    d.setDate(
-        d.getDate() + 32
+        day:
+          "numeric"
+      }
     );
 
 
-    return findPersianMonthStart(d);
-
-}
-
-
-/* =========================================
-   ماه قبل
-========================================= */
-
-function previousPersianMonthStart(
-    start
-) {
-
-    const d =
-        new Date(start);
-
-
-    d.setDate(
-        d.getDate() - 2
+  const parts =
+    formatter.formatToParts(
+      date
     );
 
 
-    return findPersianMonthStart(d);
+  let year = 0;
+
+  let month = 0;
+
+  let day = 0;
+
+
+  parts.forEach(
+    part => {
+
+      if (
+        part.type === "year"
+      ) {
+
+        year =
+          Number(
+            toEnglishDigits(
+              part.value
+            )
+          );
+
+      }
+
+
+      if (
+        part.type === "month"
+      ) {
+
+        month =
+          Number(
+            toEnglishDigits(
+              part.value
+            )
+          );
+
+      }
+
+
+      if (
+        part.type === "day"
+      ) {
+
+        day =
+          Number(
+            toEnglishDigits(
+              part.value
+            )
+          );
+
+      }
+
+    }
+  );
+
+
+  return {
+
+    year,
+    month,
+    day
+
+  };
 
 }
 
 
-/* =========================================
+/* =====================================
+   تبدیل تاریخ شمسی به ISO
+===================================== */
+
+function jalaliToISO(
+  year,
+  month,
+  day
+) {
+
+  const g =
+    jalaliToGregorian(
+      year,
+      month,
+      day
+    );
+
+
+  if (!g) {
+
+    return "";
+
+  }
+
+
+  return (
+
+    g.year +
+    "-" +
+    String(
+      g.month
+    ).padStart(
+      2,
+      "0"
+    ) +
+    "-" +
+    String(
+      g.day
+    ).padStart(
+      2,
+      "0"
+    )
+
+  );
+
+}
+
+
+/* =====================================
+   تعداد روزهای ماه
+===================================== */
+
+function getDaysInMonth(
+  year,
+  month
+) {
+
+  if (
+    month <= 6
+  ) {
+
+    return 31;
+
+  }
+
+
+  if (
+    month <= 11
+  ) {
+
+    return 30;
+
+  }
+
+
+  /*
+   * اسفند:
+   * با بررسی اول فروردین سال بعد
+   */
+
+  const nextYear =
+    jalaliToGregorian(
+      year + 1,
+      1,
+      1
+    );
+
+
+  const thisYear =
+    jalaliToGregorian(
+      year,
+      1,
+      1
+    );
+
+
+  if (
+    !nextYear ||
+    !thisYear
+  ) {
+
+    return 29;
+
+  }
+
+
+  const d1 =
+    new Date(
+      thisYear.year,
+      thisYear.month - 1,
+      thisYear.day
+    );
+
+
+  const d2 =
+    new Date(
+      nextYear.year,
+      nextYear.month - 1,
+      nextYear.day
+    );
+
+
+  const diff =
+    Math.round(
+      (
+        d2 - d1
+      ) /
+      86400000
+    );
+
+
+  return diff === 366
+    ? 30
+    : 29;
+
+}
+
+
+/* =====================================
+   روز هفته
+   شنبه = 0
+===================================== */
+
+function getWeekIndex(
+  year,
+  month,
+  day
+) {
+
+  const iso =
+    jalaliToGregorian(
+      year,
+      month,
+      day
+    );
+
+
+  if (!iso) {
+
+    return 0;
+
+  }
+
+
+  const date =
+    new Date(
+      iso.year,
+      iso.month - 1,
+      iso.day
+    );
+
+
+  /*
+   * JavaScript:
+   * Sunday = 0
+   *
+   * تبدیل به:
+   * Saturday = 0
+   */
+
+  return (
+    date.getDay() + 1
+  ) % 7;
+
+}
+
+
+/* =====================================
    مقایسه تاریخ
-========================================= */
+===================================== */
 
-function dateOnly(date) {
+function compareJalali(
+  y1,
+  m1,
+  d1,
+  y2,
+  m2,
+  d2
+) {
 
-    return new Date(
-        date.getFullYear(),
-        date.getMonth(),
-        date.getDate()
-    );
+  if (
+    y1 !== y2
+  ) {
+
+    return y1 - y2;
+
+  }
+
+
+  if (
+    m1 !== m2
+  ) {
+
+    return m1 - m2;
+
+  }
+
+
+  return d1 - d2;
 
 }
 
 
-/* =========================================
-   رسم تقویم
-========================================= */
+/* =====================================
+   آیا جمعه است؟
+===================================== */
+
+function isFridayJalali(
+  year,
+  month,
+  day
+) {
+
+  return (
+    getWeekIndex(
+      year,
+      month,
+      day
+    ) === 6
+  );
+
+}
+
+
+/* =====================================
+   نمایش تقویم
+===================================== */
 
 function renderCalendar() {
 
-    const days =
-        document.getElementById(
-            "days"
-        );
+  const title =
+    document.getElementById(
+      "calendarTitle"
+    );
 
 
-    const title =
-        document.getElementById(
-            "calendarTitle"
-        );
+  const days =
+    document.getElementById(
+      "days"
+    );
 
 
-    days.innerHTML = "";
+  title.textContent =
+    monthNames[
+      calendarMonth - 1
+    ] +
+    " " +
+    toPersianDigits(
+      calendarYear
+    );
 
 
-    const first =
-        new Date(
-            calendarFirstGregorian
-        );
+  days.innerHTML = "";
 
 
-    const firstJ =
-        gregorianToJalali(
-            first.getFullYear(),
-            first.getMonth() + 1,
-            first.getDate()
-        );
+  const firstWeekday =
+    getWeekIndex(
+      calendarYear,
+      calendarMonth,
+      1
+    );
 
 
-    title.textContent =
-        monthNames[
-            firstJ.month - 1
-        ]
-        +
-        " "
-        +
-        toPersianDigits(
-            firstJ.year
-        );
+  const totalDays =
+    getDaysInMonth(
+      calendarYear,
+      calendarMonth
+    );
+
+
+  const today =
+    getTodayJalali();
+
+
+  /*
+   * خانه‌های خالی
+   */
+
+  for (
+    let i = 0;
+    i < firstWeekday;
+    i++
+  ) {
+
+    const empty =
+      document.createElement(
+        "div"
+      );
+
+
+    empty.className =
+      "day empty";
+
+
+    days.appendChild(
+      empty
+    );
+
+  }
+
+
+  /*
+   * روزها
+   */
+
+  for (
+    let day = 1;
+    day <= totalDays;
+    day++
+  ) {
+
+    const button =
+      document.createElement(
+        "button"
+      );
+
+
+    button.type =
+      "button";
+
+
+    button.className =
+      "day";
+
+
+    button.textContent =
+      toPersianDigits(
+        day
+      );
+
+
+    const weekIndex =
+      getWeekIndex(
+        calendarYear,
+        calendarMonth,
+        day
+      );
 
 
     /*
-      روز هفته اول ماه
-      شنبه = 0
-    */
+     * امروز
+     */
 
-    const firstWeekday =
-        (
-            first.getDay() + 1
-        ) % 7;
+    if (
 
+      calendarYear ===
+        today.year &&
 
-    /*
-      پیدا کردن تعداد روز ماه
-    */
+      calendarMonth ===
+        today.month &&
 
-    const nextMonth =
-        nextPersianMonthStart(
-            first
-        );
+      day ===
+        today.day
 
-
-    const totalDays =
-        Math.round(
-            (
-                nextMonth - first
-            ) / 86400000
-        );
-
-
-    const today =
-        dateOnly(
-            new Date()
-        );
-
-
-    /*
-      خانه‌های خالی
-    */
-
-    for (
-        let i = 0;
-        i < firstWeekday;
-        i++
     ) {
 
-        const empty =
-            document.createElement(
-                "div"
-            );
-
-
-        empty.className =
-            "day empty";
-
-
-        days.appendChild(
-            empty
-        );
+      button.classList.add(
+        "today"
+      );
 
     }
 
 
     /*
-      روزها
-    */
+     * انتخاب شده
+     */
 
-    for (
-        let i = 0;
-        i < totalDays;
-        i++
+    if (
+
+      calendarYear ===
+        selectedPersianYear &&
+
+      calendarMonth ===
+        selectedPersianMonth &&
+
+      day ===
+        selectedPersianDay
+
     ) {
 
-        const current =
-            new Date(first);
-
-
-        current.setDate(
-            first.getDate() + i
-        );
-
-
-        const j =
-            gregorianToJalali(
-                current.getFullYear(),
-                current.getMonth() + 1,
-                current.getDate()
-            );
-
-
-        const button =
-            document.createElement(
-                "button"
-            );
-
-
-        button.type =
-            "button";
-
-
-        button.className =
-            "day";
-
-
-        button.textContent =
-            toPersianDigits(
-                j.day
-            );
-
-
-        /*
-          امروز
-        */
-
-        if (
-            dateOnly(current).getTime() ===
-            today.getTime()
-        ) {
-
-            button.classList.add(
-                "today"
-            );
-
-        }
-
-
-        /*
-          جمعه
-        */
-
-        const isFriday =
-            current.getDay() === 5;
-
-
-        if (isFriday) {
-
-            button.classList.add(
-                "friday"
-            );
-
-            button.disabled =
-                true;
-
-            button.title =
-                "جمعه تعطیل است.";
-
-        }
-
-
-        /*
-          تاریخ گذشته
-        */
-
-        if (
-            dateOnly(current) <
-            today
-        ) {
-
-            button.classList.add(
-                "disabled"
-            );
-
-            button.disabled =
-                true;
-
-        }
-
-
-        /*
-          تاریخ انتخاب‌شده
-        */
-
-        if (
-            selectedGregorianDate ===
-            dateToISO(current)
-        ) {
-
-            button.classList.add(
-                "selected"
-            );
-
-        }
-
-
-        /*
-          انتخاب
-        */
-
-        if (
-            !button.disabled
-        ) {
-
-            button.addEventListener(
-                "click",
-                function() {
-
-                    selectDate(
-                        current
-                    );
-
-                }
-            );
-
-        }
-
-
-        days.appendChild(
-            button
-        );
+      button.classList.add(
+        "selected"
+      );
 
     }
+
+
+    /*
+     * جمعه
+     */
+
+    if (
+      weekIndex === 6
+    ) {
+
+      button.classList.add(
+        "friday"
+      );
+
+
+      button.disabled =
+        true;
+
+
+      button.title =
+        "جمعه آرایشگاه تعطیل است.";
+
+    }
+
+
+    /*
+     * تاریخ گذشته
+     */
+
+    const isPast =
+      compareJalali(
+
+        calendarYear,
+        calendarMonth,
+        day,
+
+        today.year,
+        today.month,
+        today.day
+
+      ) < 0;
+
+
+    if (
+      isPast
+    ) {
+
+      button.classList.add(
+        "disabled"
+      );
+
+
+      button.disabled =
+        true;
+
+    }
+
+
+    /*
+     * تاریخ آینده
+     */
+
+    if (
+      !isPast &&
+      weekIndex !== 6
+    ) {
+
+      button.addEventListener(
+        "click",
+        function() {
+
+          selectDate(
+
+            calendarYear,
+            calendarMonth,
+            day
+
+          );
+
+        }
+      );
+
+    }
+
+
+    days.appendChild(
+      button
+    );
+
+  }
 
 }
 
 
-/* =========================================
+/* =====================================
    انتخاب تاریخ
-========================================= */
+===================================== */
 
 function selectDate(
-    date
+  year,
+  month,
+  day
 ) {
 
-    if (
-        date.getDay() === 5
-    ) {
+  selectedPersianYear =
+    year;
+
+
+  selectedPersianMonth =
+    month;
+
+
+  selectedPersianDay =
+    day;
+
+
+  selectedGregorianDate =
+    jalaliToISO(
+      year,
+      month,
+      day
+    );
+
+
+  selectedTime =
+    "";
+
+
+  const weekdayIndex =
+    getWeekIndex(
+      year,
+      month,
+      day
+    );
+
+
+  document.getElementById(
+    "selectedDateText"
+  ).textContent =
+
+    weekdayNames[
+      weekdayIndex
+    ] +
+
+    " " +
+
+    toPersianDigits(
+      day
+    ) +
+
+    " " +
+
+    monthNames[
+      month - 1
+    ] +
+
+    " " +
+
+    toPersianDigits(
+      year
+    );
+
+
+  renderCalendar();
+
+
+  loadTimes();
+
+
+  checkForm();
+
+}
+
+
+/* =====================================
+   ماه قبل
+===================================== */
+
+document
+  .getElementById(
+    "prevMonth"
+  )
+  .addEventListener(
+    "click",
+    function() {
+
+      const today =
+        getTodayJalali();
+
+
+      /*
+       * ماه قبل از ماه جاری ممنوع
+       */
+
+      if (
+
+        calendarYear ===
+          today.year &&
+
+        calendarMonth ===
+          today.month
+
+      ) {
 
         return;
 
+      }
+
+
+      calendarMonth--;
+
+
+      if (
+        calendarMonth < 1
+      ) {
+
+        calendarMonth = 12;
+
+        calendarYear--;
+
+      }
+
+
+      renderCalendar();
+
     }
+  );
 
 
-    selectedGregorianDate =
-        dateToISO(date);
-
-
-    selectedPersianDate =
-        gregorianToJalali(
-            date.getFullYear(),
-            date.getMonth() + 1,
-            date.getDate()
-        );
-
-
-    selectedTime = "";
-
-
-    const weekdayNames = [
-
-        "یکشنبه",
-        "دوشنبه",
-        "سه‌شنبه",
-        "چهارشنبه",
-        "پنجشنبه",
-        "جمعه",
-        "شنبه"
-
-    ];
-
-
-    const text =
-
-        weekdayNames[
-            date.getDay()
-        ]
-        +
-        " "
-        +
-        toPersianDigits(
-            selectedPersianDate.day
-        )
-        +
-        " "
-        +
-        monthNames[
-            selectedPersianDate.month - 1
-        ]
-        +
-        " "
-        +
-        toPersianDigits(
-            selectedPersianDate.year
-        );
-
-
-    document.getElementById(
-        "selectedDateText"
-    ).textContent =
-        text;
-
-
-    renderCalendar();
-
-
-    loadTimes();
-
-
-    checkForm();
-
-}
-
-
-/* =========================================
-   ماه قبل
-========================================= */
-
-document
-    .getElementById(
-        "prevMonth"
-    )
-    .addEventListener(
-        "click",
-        function() {
-
-            const today =
-                dateOnly(
-                    new Date()
-                );
-
-
-            const currentStart =
-                dateOnly(
-                    calendarFirstGregorian
-                );
-
-
-            const todayStart =
-                findPersianMonthStart(
-                    today
-                );
-
-
-            if (
-                currentStart.getTime() <=
-                todayStart.getTime()
-            ) {
-
-                return;
-
-            }
-
-
-            calendarFirstGregorian =
-                previousPersianMonthStart(
-                    calendarFirstGregorian
-                );
-
-
-            renderCalendar();
-
-        }
-    );
-
-
-/* =========================================
+/* =====================================
    ماه بعد
-========================================= */
+===================================== */
 
 document
-    .getElementById(
-        "nextMonth"
-    )
-    .addEventListener(
+  .getElementById(
+    "nextMonth"
+  )
+  .addEventListener(
+    "click",
+    function() {
+
+      calendarMonth++;
+
+
+      if (
+        calendarMonth > 12
+      ) {
+
+        calendarMonth = 1;
+
+        calendarYear++;
+
+      }
+
+
+      renderCalendar();
+
+    }
+  );
+
+
+/* =====================================
+   خدمات
+===================================== */
+
+document
+  .querySelectorAll(
+    ".service"
+  )
+  .forEach(
+    button => {
+
+      button.addEventListener(
         "click",
         function() {
 
-            calendarFirstGregorian =
-                nextPersianMonthStart(
-                    calendarFirstGregorian
+          document
+            .querySelectorAll(
+              ".service"
+            )
+            .forEach(
+              item => {
+
+                item.classList.remove(
+                  "selected"
                 );
 
-
-            renderCalendar();
-
-        }
-    );
-
-
-/* =========================================
-   خدمات
-========================================= */
-
-document
-    .querySelectorAll(
-        ".service"
-    )
-    .forEach(
-        button => {
-
-            button.addEventListener(
-                "click",
-                function() {
-
-                    document
-                        .querySelectorAll(
-                            ".service"
-                        )
-                        .forEach(
-                            item => {
-
-                                item.classList.remove(
-                                    "selected"
-                                );
-
-                            }
-                        );
-
-
-                    button.classList.add(
-                        "selected"
-                    );
-
-
-                    selectedService =
-                        button.dataset.service;
-
-
-                    checkForm();
-
-                }
+              }
             );
 
+
+          button.classList.add(
+            "selected"
+          );
+
+
+          selectedService =
+            button.dataset.service;
+
+
+          checkForm();
+
         }
-    );
+      );
+
+    }
+  );
 
 
-/* =========================================
+/* =====================================
    دریافت ساعت‌ها
-========================================= */
+===================================== */
 
 async function loadTimes() {
 
+  if (
+    !selectedGregorianDate
+  ) {
+
+    return;
+
+  }
+
+
+  if (
+    loadingTimes
+  ) {
+
+    return;
+
+  }
+
+
+  loadingTimes =
+    true;
+
+
+  selectedTime =
+    "";
+
+
+  checkForm();
+
+
+  const times =
+    document.getElementById(
+      "times"
+    );
+
+
+  times.innerHTML =
+
+    `<div class="loading">
+      در حال بررسی نوبت‌های آزاد...
+    </div>`;
+
+
+  try {
+
+    const url =
+
+      GOOGLE_SCRIPT_URL +
+
+      "?action=times" +
+
+      "&date=" +
+
+      encodeURIComponent(
+        selectedGregorianDate
+      ) +
+
+      "&t=" +
+
+      Date.now();
+
+
+    const response =
+      await fetch(
+        url,
+        {
+          cache:
+            "no-store"
+        }
+      );
+
+
+    const data =
+      await response.json();
+
+
     if (
-        !selectedGregorianDate
+      !data.success
     ) {
 
-        return;
+      throw new Error(
+        data.message ||
+        "خطا"
+      );
 
     }
 
 
-    if (loadingTimes) {
+    if (
+      data.friday
+    ) {
 
-        return;
+      times.innerHTML =
+
+        `<div class="no-times">
+          جمعه آرایشگاه تعطیل است.
+        </div>`;
+
+
+      return;
 
     }
 
 
-    loadingTimes = true;
+    renderTimes(
 
+      data.allTimes || [],
 
-    selectedTime = "";
+      data.reservedTimes || []
 
+    );
 
-    checkForm();
+  }
 
+  catch(error) {
 
-    const times =
-        document.getElementById(
-            "times"
-        );
+    console.error(
+      error
+    );
 
 
     times.innerHTML =
 
-    `
-        <div class="loading">
-            در حال بررسی نوبت‌های آزاد...
-        </div>
-    `;
+      `<div class="no-times">
+        دریافت نوبت‌ها انجام نشد.
+        <br>
+        دوباره تلاش کنید.
+      </div>`;
 
+  }
 
-    try {
+  finally {
 
-        const url =
-            GOOGLE_SCRIPT_URL +
-            "?action=times" +
-            "&date=" +
-            encodeURIComponent(
-                selectedGregorianDate
-            ) +
-            "&t=" +
-            Date.now();
+    loadingTimes =
+      false;
 
+    checkForm();
 
-        const response =
-            await fetch(
-                url,
-                {
-                    cache:
-                        "no-store"
-                }
-            );
-
-
-        const data =
-            await response.json();
-
-
-        if (
-            !data.success
-        ) {
-
-            throw new Error(
-                data.message ||
-                "خطا"
-            );
-
-        }
-
-
-        if (
-            data.friday
-        ) {
-
-            times.innerHTML =
-
-            `
-                <div class="no-times">
-                    جمعه آرایشگاه تعطیل است.
-                </div>
-            `;
-
-            return;
-
-        }
-
-
-        renderTimes(
-            data.allTimes || [],
-            data.reservedTimes || []
-        );
-
-    }
-
-    catch(error) {
-
-        console.error(error);
-
-
-        times.innerHTML =
-
-        `
-            <div class="no-times">
-                دریافت نوبت‌ها انجام نشد.
-                <br>
-                دوباره تلاش کنید.
-            </div>
-        `;
-
-    }
-
-    finally {
-
-        loadingTimes =
-            false;
-
-        checkForm();
-
-    }
+  }
 
 }
 
 
-/* =========================================
+/* =====================================
    نمایش ساعت‌ها
-========================================= */
+===================================== */
 
 function renderTimes(
-    allTimes,
-    reservedTimes
+  allTimes,
+  reservedTimes
 ) {
 
-    const times =
-        document.getElementById(
-            "times"
+  const times =
+    document.getElementById(
+      "times"
+    );
+
+
+  times.innerHTML = "";
+
+
+  if (
+    !allTimes.length
+  ) {
+
+    times.innerHTML =
+
+      `<div class="no-times">
+        ساعتی برای این روز باقی نمانده است.
+      </div>`;
+
+
+    return;
+
+  }
+
+
+  allTimes.forEach(
+    time => {
+
+      const button =
+        document.createElement(
+          "button"
         );
 
 
-    times.innerHTML = "";
+      button.type =
+        "button";
 
 
-    if (
-        !allTimes.length
-    ) {
-
-        times.innerHTML =
-
-        `
-            <div class="no-times">
-                ساعتی برای این روز وجود ندارد.
-            </div>
-        `;
-
-        return;
-
-    }
+      button.className =
+        "time";
 
 
-    allTimes.forEach(
-        time => {
-
-            const button =
-                document.createElement(
-                    "button"
-                );
+      button.textContent =
+        toPersianDigits(
+          time
+        );
 
 
-            button.type =
-                "button";
+      /*
+       * رزرو شده
+       */
+
+      if (
+        reservedTimes.includes(
+          time
+        )
+      ) {
+
+        button.classList.add(
+          "reserved"
+        );
 
 
-            button.className =
-                "time";
+        button.disabled =
+          true;
 
 
-            button.textContent =
-                toPersianDigits(
-                    time
-                );
+        button.title =
+          "این ساعت رزرو شده است.";
+
+      }
 
 
-            /*
-              رزرو شده یا در انتظار تأیید
-            */
+      /*
+       * آزاد
+       */
 
-            if (
-                reservedTimes.includes(
-                    time
-                )
-            ) {
+      else {
 
-                button.classList.add(
-                    "reserved"
-                );
+        button.addEventListener(
+          "click",
+          function() {
 
+            document
+              .querySelectorAll(
+                ".time"
+              )
+              .forEach(
+                item => {
 
-                button.disabled =
-                    true;
+                  item.classList.remove(
+                    "selected"
+                  );
 
-
-                button.title =
-                    "این ساعت قبلاً گرفته شده است.";
-
-            }
-
-            else {
-
-                button.addEventListener(
-                    "click",
-                    function() {
-
-                        document
-                            .querySelectorAll(
-                                ".time"
-                            )
-                            .forEach(
-                                item => {
-
-                                    item.classList.remove(
-                                        "selected"
-                                    );
-
-                                }
-                            );
+                }
+              );
 
 
-                        button.classList.add(
-                            "selected"
-                        );
-
-
-                        selectedTime =
-                            time;
-
-
-                        checkForm();
-
-                    }
-                );
-
-            }
-
-
-            times.appendChild(
-                button
+            button.classList.add(
+              "selected"
             );
 
-        }
-    );
+
+            selectedTime =
+              time;
+
+
+            checkForm();
+
+          }
+        );
+
+      }
+
+
+      times.appendChild(
+        button
+      );
+
+    }
+  );
 
 }
 
 
-/* =========================================
+/* =====================================
    عناصر فرم
-========================================= */
+===================================== */
 
 const nameInput =
-document.getElementById(
+  document.getElementById(
     "customerName"
-);
+  );
 
 
 const phoneInput =
-document.getElementById(
+  document.getElementById(
     "phone"
-);
+  );
 
 
 const submitButton =
-document.getElementById(
+  document.getElementById(
     "submitButton"
-);
+  );
 
 
 const message =
-document.getElementById(
+  document.getElementById(
     "message"
-);
+  );
 
 
-const bookingStatus =
-document.getElementById(
-    "bookingStatus"
-);
-
-
-/* =========================================
-   ورودی نام
-========================================= */
+/* =====================================
+   ورودی‌ها
+===================================== */
 
 nameInput.addEventListener(
-    "input",
-    checkForm
+  "input",
+  checkForm
 );
 
-
-/* =========================================
-   ورودی موبایل
-========================================= */
 
 phoneInput.addEventListener(
-    "input",
-    function() {
+  "input",
+  function() {
 
-        phoneInput.value =
-            toEnglishDigits(
-                phoneInput.value
-            ).replace(
-                /\D/g,
-                ""
-            );
+    phoneInput.value =
+      phoneInput.value.replace(
+        /[^0-9]/g,
+        ""
+      );
 
 
-        checkForm();
+    checkForm();
 
-    }
+  }
 );
 
 
-/* =========================================
+/* =====================================
    بررسی فرم
-========================================= */
+===================================== */
 
 function checkForm() {
 
-    const name =
-        nameInput.value.trim();
+  const name =
+    nameInput.value.trim();
 
 
-    const phone =
-        phoneInput.value.trim();
+  const phone =
+    phoneInput.value.trim();
 
 
-    const validPhone =
-        /^09\d{9}$/.test(
-            phone
-        );
+  const validPhone =
+    /^09\d{9}$/.test(
+      phone
+    );
 
 
-    submitButton.disabled =
-
-        !(
-            selectedService &&
-            selectedGregorianDate &&
-            selectedTime &&
-            name &&
-            validPhone &&
-            !loadingTimes &&
-            !bookingId
-        );
+  submitButton.disabled = !(
+    selectedService &&
+    selectedGregorianDate &&
+    selectedTime &&
+    name &&
+    validPhone &&
+    !loadingTimes
+  );
 
 }
 
 
-/* =========================================
+/* =====================================
    پیام
-========================================= */
+===================================== */
 
 function showMessage(
-    text,
-    type
+  text,
+  type
 ) {
 
-    message.textContent =
-        text;
+  message.textContent =
+    text;
 
 
-    message.className =
-        "message " +
-        type;
+  message.className =
+    "message " +
+    type;
 
 }
 
 
-/* =========================================
-   وضعیت نوبت
-========================================= */
-
-function showBookingStatus(
-    type,
-    text,
-    id
-) {
-
-    bookingStatus.className =
-        "booking-status " +
-        type;
-
-
-    bookingStatus.innerHTML =
-        text;
-
-
-    if (id) {
-
-        bookingStatus.innerHTML +=
-
-            `<span class="booking-id">
-                کد نوبت: ${id}
-            </span>`;
-
-    }
-
-}
-
-
-/* =========================================
+/* =====================================
    ثبت نوبت
-========================================= */
+===================================== */
 
 submitButton.addEventListener(
-    "click",
-    bookAppointment
+  "click",
+  bookAppointment
 );
 
 
 async function bookAppointment() {
 
+  if (
+    submitButton.disabled
+  ) {
+
+    return;
+
+  }
+
+
+  submitButton.disabled =
+    true;
+
+
+  submitButton.textContent =
+    "در حال ثبت...";
+
+
+  try {
+
+    const params =
+      new URLSearchParams();
+
+
+    params.append(
+      "action",
+      "book"
+    );
+
+
+    params.append(
+      "customerName",
+      nameInput.value.trim()
+    );
+
+
+    params.append(
+      "phone",
+      phoneInput.value.trim()
+    );
+
+
+    params.append(
+      "service",
+      selectedService
+    );
+
+
+    params.append(
+      "date",
+      selectedGregorianDate
+    );
+
+
+    params.append(
+      "time",
+      selectedTime
+    );
+
+
+    const response =
+      await fetch(
+
+        GOOGLE_SCRIPT_URL +
+        "?" +
+        params.toString() +
+        "&t=" +
+        Date.now(),
+
+        {
+          cache:
+            "no-store"
+        }
+
+      );
+
+
+    const data =
+      await response.json();
+
+
     if (
-        submitButton.disabled
+      !data.success
     ) {
 
-        return;
+      showMessage(
 
-    }
+        data.message ||
+        "ثبت نوبت انجام نشد.",
 
+        "error"
 
-    submitButton.disabled =
-        true;
+      );
 
 
-    submitButton.textContent =
-        "در حال ثبت...";
+      await loadTimes();
 
 
-    try {
-
-        const params =
-            new URLSearchParams();
-
-
-        params.append(
-            "action",
-            "book"
-        );
-
-
-        params.append(
-            "customerName",
-            nameInput.value.trim()
-        );
-
-
-        params.append(
-            "phone",
-            phoneInput.value.trim()
-        );
-
-
-        params.append(
-            "service",
-            selectedService
-        );
-
-
-        params.append(
-            "date",
-            selectedGregorianDate
-        );
-
-
-        params.append(
-            "time",
-            selectedTime
-        );
-
-
-        const response =
-            await fetch(
-
-                GOOGLE_SCRIPT_URL +
-                "?" +
-                params.toString() +
-                "&t=" +
-                Date.now(),
-
-                {
-                    cache:
-                        "no-store"
-                }
-
-            );
-
-
-        const data =
-            await response.json();
-
-
-        /*
-          ساعت قبلاً گرفته شده
-        */
-
-        if (
-            !data.success
-        ) {
-
-            showMessage(
-                data.message ||
-                "این ساعت قبلاً گرفته شده است.",
-                "error"
-            );
-
-
-            await loadTimes();
-
-
-            return;
-
-        }
-
-
-        /*
-          ثبت موفق و انتظار تأیید
-        */
-
-        bookingId =
-            data.id;
-
-
-        showMessage(
-            "نوبت شما ثبت شد و در انتظار تأیید مدیریت است.",
-            "pending"
-        );
-
-
-        showBookingStatus(
-
-            "pending",
-
-            `
-            ⏳ نوبت شما ثبت شد.
-            <br>
-            در انتظار تأیید مدیریت هستید.
-            `,
-
-            bookingId
-
-        );
-
-
-        /*
-          فرم را غیرفعال می‌کنیم
-        */
-
-        nameInput.disabled =
-            true;
-
-
-        phoneInput.disabled =
-            true;
-
-
-        /*
-          ساعت را دوباره می‌گیریم
-        */
-
-        await loadTimes();
-
-
-        /*
-          شروع بررسی وضعیت
-        */
-
-        startStatusChecking(
-            bookingId
-        );
-
-
-    }
-
-    catch(error) {
-
-        console.error(error);
-
-
-        showMessage(
-            "ارتباط با سرور برقرار نشد.",
-            "error"
-        );
-
-    }
-
-
-    submitButton.textContent =
-        "ثبت نوبت";
-
-
-    checkForm();
-
-}
-
-
-/* =========================================
-   بررسی وضعیت هر چند ثانیه
-========================================= */
-
-function startStatusChecking(
-    id
-) {
-
-    if (statusTimer) {
-
-        clearInterval(
-            statusTimer
-        );
+      return;
 
     }
 
 
     /*
-      هر 4 ثانیه
-    */
+     * نوبت در حالت pending است.
+     */
+
+    const appointmentID =
+      data.id;
+
+
+    localStorage.setItem(
+
+      "mesterPaxAppointmentID",
+
+      appointmentID
+
+    );
+
+
+    /*
+     * نمایش وضعیت
+     */
+
+    showAppointmentStatus(
+      appointmentID
+    );
+
+
+  }
+
+  catch(error) {
+
+    console.error(
+      error
+    );
+
+
+    showMessage(
+
+      "ارتباط با سرور برقرار نشد.",
+
+      "error"
+
+    );
+
+  }
+
+
+  submitButton.textContent =
+    "ثبت نوبت";
+
+
+  checkForm();
+
+}
+
+
+/* =====================================
+   نمایش صفحه وضعیت
+===================================== */
+
+function showAppointmentStatus(
+  id
+) {
+
+  document
+    .getElementById(
+      "bookingArea"
+    )
+    .style.display =
+      "none";
+
+
+  document
+    .getElementById(
+      "statusCard"
+    )
+    .classList.add(
+      "show"
+    );
+
+
+  document
+    .getElementById(
+      "statusIcon"
+    )
+    .textContent =
+      "⏳";
+
+
+  document
+    .getElementById(
+      "statusTitle"
+    )
+    .textContent =
+      "در انتظار تأیید مدیر";
+
+
+  document
+    .getElementById(
+      "statusText"
+    )
+    .innerHTML =
+      "نوبت شما ثبت شده است.<br>منتظر تأیید مدیر باشید.";
+
+
+  document
+    .getElementById(
+      "statusId"
+    )
+    .textContent =
+      "ID: " + id;
+
+
+  startStatusPolling(
+    id
+  );
+
+}
+
+
+/* =====================================
+   بررسی وضعیت
+===================================== */
+
+function startStatusPolling(
+  id
+) {
+
+  if (
+    statusTimer
+  ) {
+
+    clearInterval(
+      statusTimer
+    );
+
+  }
+
+
+  checkAppointmentStatus(
+    id
+  );
+
+
+  /*
+   * هر 3 ثانیه
+   */
+
+  statusTimer =
+    setInterval(
+
+      function() {
+
+        checkAppointmentStatus(
+          id
+        );
+
+      },
+
+      3000
+
+    );
+
+}
+
+
+/* =====================================
+   دریافت وضعیت از Apps Script
+===================================== */
+
+async function checkAppointmentStatus(
+  id
+) {
+
+  try {
+
+    const url =
+
+      GOOGLE_SCRIPT_URL +
+
+      "?action=status" +
+
+      "&id=" +
+
+      encodeURIComponent(
+        id
+      ) +
+
+      "&t=" +
+
+      Date.now();
+
+
+    const response =
+      await fetch(
+
+        url,
+
+        {
+          cache:
+            "no-store"
+        }
+
+      );
+
+
+    const data =
+      await response.json();
+
+
+    if (
+      !data.success ||
+      !data.appointment
+    ) {
+
+      return;
+
+    }
+
+
+    const status =
+      data.appointment.status;
+
+
+    /*
+     * تأیید شده
+     */
+
+    if (
+      status ===
+      "approved"
+    ) {
+
+      showApprovedStatus(
+        data.appointment
+      );
+
+
+      return;
+
+    }
+
+
+    /*
+     * لغو شده
+     */
+
+    if (
+      status ===
+      "cancelled"
+    ) {
+
+      showCancelledStatus(
+        data.appointment
+      );
+
+
+      return;
+
+    }
+
+
+  }
+
+  catch(error) {
+
+    console.error(
+      error
+    );
+
+  }
+
+}
+
+
+/* =====================================
+   وضعیت تأیید شده
+===================================== */
+
+function showApprovedStatus(
+  appointment
+) {
+
+  if (
+    statusTimer
+  ) {
+
+    clearInterval(
+      statusTimer
+    );
 
     statusTimer =
-        setInterval(
-            function() {
+      null;
 
-                checkBookingStatus(
-                    id
-                );
-
-            },
-            4000
-        );
+  }
 
 
-    /*
-      بلافاصله هم بررسی کن
-    */
+  document
+    .getElementById(
+      "statusIcon"
+    )
+    .textContent =
+      "✅";
 
-    checkBookingStatus(id);
+
+  document
+    .getElementById(
+      "statusTitle"
+    )
+    .textContent =
+      "نوبت شما با موفقیت رزرو شد";
+
+
+  document
+    .getElementById(
+      "statusText"
+    )
+    .innerHTML =
+
+      "نوبت شما توسط مدیر تأیید شد." +
+
+      "<br>" +
+
+      "ساعت: " +
+
+      toPersianDigits(
+        appointment.time
+      );
+
+
+  document
+    .getElementById(
+      "statusId"
+    )
+    .textContent =
+      "ID: " +
+      appointment.id;
 
 }
 
 
-/* =========================================
-   دریافت وضعیت از سرور
-========================================= */
+/* =====================================
+   وضعیت لغو شده
+===================================== */
 
-async function checkBookingStatus(
-    id
+function showCancelledStatus(
+  appointment
 ) {
 
-    try {
+  if (
+    statusTimer
+  ) {
 
-        const url =
-            GOOGLE_SCRIPT_URL +
-            "?action=status" +
-            "&id=" +
-            encodeURIComponent(id) +
-            "&t=" +
-            Date.now();
+    clearInterval(
+      statusTimer
+    );
 
+    statusTimer =
+      null;
 
-        const response =
-            await fetch(
-                url,
-                {
-                    cache:
-                        "no-store"
-                }
-            );
+  }
 
 
-        const data =
-            await response.json();
+  document
+    .getElementById(
+      "statusIcon"
+    )
+    .textContent =
+      "❌";
 
 
-        if (
-            !data.success
-        ) {
-
-            return;
-
-        }
-
-
-        /*
-          تأیید شد
-        */
-
-        if (
-            data.status ===
-            "تأیید شد"
-        ) {
-
-            if (statusTimer) {
-
-                clearInterval(
-                    statusTimer
-                );
-
-            }
+  document
+    .getElementById(
+      "statusTitle"
+    )
+    .textContent =
+      "نوبت لغو شد";
 
 
-            showMessage(
-                "نوبت شما با موفقیت رزرو شد.",
-                "success"
-            );
+  document
+    .getElementById(
+      "statusText"
+    )
+    .innerHTML =
+      "متأسفانه مدیر نوبت شما را تأیید نکرد.";
 
 
-            showBookingStatus(
-
-                "success",
-
-                `
-                ✅ نوبت شما با موفقیت رزرو شد.
-                <br>
-                منتظر شما هستیم.
-                `,
-
-                id
-
-            );
-
-
-            return;
-
-        }
-
-
-        /*
-          لغو شد
-        */
-
-        if (
-            data.status ===
-            "لغو شد"
-        ) {
-
-            if (statusTimer) {
-
-                clearInterval(
-                    statusTimer
-                );
-
-            }
-
-
-            showMessage(
-                "نوبت شما توسط مدیریت لغو شد.",
-                "cancelled"
-            );
-
-
-            showBookingStatus(
-
-                "cancelled",
-
-                `
-                ❌ نوبت شما لغو شد.
-                <br>
-                می‌توانید زمان دیگری انتخاب کنید.
-                `,
-
-                id
-
-            );
-
-
-            /*
-              ساعت آزاد شده
-            */
-
-            await loadTimes();
-
-
-            return;
-
-        }
-
-    }
-
-    catch(error) {
-
-        console.error(error);
-
-    }
+  document
+    .getElementById(
+      "statusId"
+    )
+    .textContent =
+      "ID: " +
+      appointment.id;
 
 }
 
 
-/* =========================================
-   شروع تقویم
-========================================= */
+/* =====================================
+   ثبت نوبت جدید
+===================================== */
 
-(function initCalendar() {
+document
+  .getElementById(
+    "newBookingButton"
+  )
+  .addEventListener(
+    "click",
+    function() {
 
-    const today =
-        new Date();
+      if (
+        statusTimer
+      ) {
+
+        clearInterval(
+          statusTimer
+        );
+
+        statusTimer =
+          null;
+
+      }
 
 
-    calendarFirstGregorian =
-        findPersianMonthStart(
-            today
+      localStorage.removeItem(
+        "mesterPaxAppointmentID"
+      );
+
+
+      document
+        .getElementById(
+          "statusCard"
+        )
+        .classList.remove(
+          "show"
         );
 
 
-    renderCalendar();
+      document
+        .getElementById(
+          "bookingArea"
+        )
+        .style.display =
+          "block";
+
+
+      selectedService =
+        "";
+
+      selectedTime =
+        "";
+
+      selectedGregorianDate =
+        "";
+
+      selectedPersianDay =
+        0;
+
+
+      document
+        .querySelectorAll(
+          ".service"
+        )
+        .forEach(
+          item => {
+
+            item.classList.remove(
+              "selected"
+            );
+
+          }
+        );
+
+
+      nameInput.value =
+        "";
+
+      phoneInput.value =
+        "";
+
+
+      document
+        .getElementById(
+          "selectedDateText"
+        )
+        .textContent =
+          "تاریخ انتخاب نشده";
+
+
+      document
+        .getElementById(
+          "times"
+        )
+        .innerHTML =
+
+          `<div class="no-times">
+            ابتدا یک تاریخ را انتخاب کنید
+          </div>`;
+
+
+      checkForm();
+
+
+    }
+  );
+
+
+/* =====================================
+   شروع برنامه
+===================================== */
+
+(function init() {
+
+  const today =
+    getTodayJalali();
+
+
+  calendarYear =
+    today.year;
+
+
+  calendarMonth =
+    today.month;
+
+
+  renderCalendar();
+
+
+  /*
+   * اگر مشتری قبلاً نوبتی ثبت کرده
+   * بود، وضعیت آن را دوباره نمایش بده.
+   */
+
+  const savedID =
+    localStorage.getItem(
+      "mesterPaxAppointmentID"
+    );
+
+
+  if (
+    savedID
+  ) {
+
+    checkSavedAppointment(
+      savedID
+    );
+
+  }
 
 })();
+
+
+/* =====================================
+   بررسی نوبت ذخیره‌شده
+===================================== */
+
+async function checkSavedAppointment(
+  id
+) {
+
+  try {
+
+    const response =
+      await fetch(
+
+        GOOGLE_SCRIPT_URL +
+
+        "?action=status" +
+
+        "&id=" +
+
+        encodeURIComponent(
+          id
+        ) +
+
+        "&t=" +
+
+        Date.now(),
+
+        {
+          cache:
+            "no-store"
+        }
+
+      );
+
+
+    const data =
+      await response.json();
+
+
+    if (
+      data.success &&
+      data.appointment
+    ) {
+
+      showAppointmentStatus(
+        id
+      );
+
+
+      /*
+       * وضعیت نهایی را
+       * همان لحظه بررسی کن.
+       */
+
+      if (
+        data.appointment.status ===
+        "approved"
+      ) {
+
+        showApprovedStatus(
+          data.appointment
+        );
+
+      }
+
+
+      if (
+        data.appointment.status ===
+        "cancelled"
+      ) {
+
+        showCancelledStatus(
+          data.appointment
+        );
+
+      }
+
+    }
+
+  }
+
+  catch(error) {
+
+    console.error(
+      error
+    );
+
+  }
+
+}
 
 </script>
 
