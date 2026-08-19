@@ -10,7 +10,7 @@
     content="width=device-width, initial-scale=1.0"
 >
 
-<title>MESTER PAX | نوبت‌دهی</title>
+<title>MESTER PAX</title>
 
 
 <style>
@@ -26,19 +26,20 @@ body {
 
     min-height: 100vh;
 
+    background:
+        radial-gradient(
+            circle at top,
+            #292929 0%,
+            #111 45%,
+            #070707 100%
+        );
+
+    color: #fff;
+
     font-family:
         Tahoma,
         Arial,
         sans-serif;
-
-    background:
-        radial-gradient(
-            circle at top,
-            #252525,
-            #090909 70%
-        );
-
-    color: white;
 }
 
 
@@ -51,7 +52,7 @@ body {
     margin: auto;
 
     padding:
-        20px 16px 50px;
+        20px 15px 50px;
 }
 
 
@@ -60,7 +61,7 @@ body {
     text-align: center;
 
     padding:
-        30px 0;
+        28px 0 25px;
 }
 
 
@@ -71,17 +72,17 @@ body {
     font-size: 38px;
 
     letter-spacing: 4px;
-
 }
 
 
 .logo p {
 
+    margin:
+        10px 0 0;
+
     color: #888;
 
-    margin-top: 10px;
-
-    font-size: 14px;
+    font-size: 13px;
 }
 
 
@@ -90,13 +91,13 @@ body {
     background: #171717;
 
     border:
-        1px solid #2d2d2d;
+        1px solid #2b2b2b;
 
     border-radius: 20px;
 
     padding: 20px;
 
-    margin-bottom: 18px;
+    margin-bottom: 16px;
 }
 
 
@@ -106,9 +107,13 @@ body {
 
     font-weight: bold;
 
-    margin-bottom: 18px;
+    margin-bottom: 17px;
 }
 
+
+/* ========================================
+   خدمات
+======================================== */
 
 .services {
 
@@ -122,22 +127,24 @@ body {
 
     width: 100%;
 
-    padding: 15px;
-
-    background: #222;
-
-    color: white;
-
     border:
         1px solid #333;
 
+    background: #222;
+
+    color: #fff;
+
     border-radius: 12px;
+
+    min-height: 52px;
 
     font-family: inherit;
 
-    cursor: pointer;
-
     text-align: right;
+
+    padding: 0 16px;
+
+    cursor: pointer;
 
     font-size: 14px;
 }
@@ -145,90 +152,34 @@ body {
 
 .service.selected {
 
-    background: white;
+    background: #fff;
 
-    color: black;
+    color: #000;
 
-    border-color: white;
+    border-color: #fff;
 
     font-weight: bold;
 }
 
 
-.label {
+/* ========================================
+   تقویم شمسی
+======================================== */
 
-    display: block;
+.calendar {
 
-    color: #999;
-
-    font-size: 13px;
-
-    margin-bottom: 8px;
-}
-
-
-input {
-
-    width: 100%;
-
-    height: 50px;
-
-    background: #222;
-
-    color: white;
+    background: #111;
 
     border:
-        1px solid #333;
+        1px solid #292929;
 
-    border-radius: 12px;
+    border-radius: 17px;
 
-    padding: 0 14px;
-
-    font-family: inherit;
-
-    font-size: 15px;
-
-    outline: none;
-
-    margin-bottom: 15px;
+    overflow: hidden;
 }
 
 
-input:focus {
-
-    border-color: #777;
-}
-
-
-/*
-===============================
-تاریخ
-===============================
-*/
-
-.date-box {
-
-    position: relative;
-}
-
-
-#date {
-
-    position: absolute;
-
-    opacity: 0;
-
-    pointer-events: none;
-
-    width: 1px;
-
-    height: 1px;
-}
-
-
-#persianDate {
-
-    cursor: pointer;
+.calendar-header {
 
     display: flex;
 
@@ -236,35 +187,154 @@ input:focus {
 
     justify-content: space-between;
 
-    background: #222;
+    padding: 14px;
 
-    border:
-        1px solid #333;
+    border-bottom:
+        1px solid #292929;
+}
 
-    border-radius: 12px;
 
-    min-height: 50px;
+.calendar-title {
 
-    padding:
-        0 14px;
+    text-align: center;
+
+    font-size: 15px;
+
+    font-weight: bold;
+}
+
+
+.calendar-nav {
+
+    width: 38px;
+
+    height: 38px;
+
+    border: none;
+
+    border-radius: 10px;
+
+    background: #242424;
 
     color: white;
 
-    margin-bottom: 18px;
+    font-size: 20px;
+
+    cursor: pointer;
 }
 
 
-#persianDate.empty {
+.weekdays {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(7, 1fr);
+
+    padding:
+        10px 7px 5px;
 
     color: #777;
+
+    font-size: 11px;
+
+    text-align: center;
 }
 
 
-/*
-===============================
-ساعت‌ها
-===============================
-*/
+.days {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(7, 1fr);
+
+    gap: 5px;
+
+    padding:
+        5px 7px 12px;
+}
+
+
+.day {
+
+    aspect-ratio: 1 / 1;
+
+    min-width: 0;
+
+    border: none;
+
+    border-radius: 10px;
+
+    background: #1d1d1d;
+
+    color: #eee;
+
+    font-family: inherit;
+
+    cursor: pointer;
+
+    font-size: 13px;
+}
+
+
+.day:hover {
+
+    background: #333;
+}
+
+
+.day.empty {
+
+    background: transparent;
+
+    cursor: default;
+}
+
+
+.day.today {
+
+    border:
+        1px solid #777;
+}
+
+
+.day.selected {
+
+    background: #fff;
+
+    color: #000;
+
+    font-weight: bold;
+}
+
+
+.day.disabled {
+
+    color: #444;
+
+    background: #151515;
+
+    cursor: not-allowed;
+}
+
+
+.selected-date {
+
+    text-align: center;
+
+    padding:
+        12px 10px 0;
+
+    color: #bbb;
+
+    font-size: 13px;
+}
+
+
+/* ========================================
+   ساعت‌ها
+======================================== */
 
 .times {
 
@@ -274,6 +344,8 @@ input:focus {
         repeat(2, 1fr);
 
     gap: 10px;
+
+    margin-top: 16px;
 }
 
 
@@ -281,12 +353,12 @@ input:focus {
 
     min-height: 50px;
 
-    background: #222;
-
-    color: white;
-
     border:
         1px solid #333;
+
+    background: #222;
+
+    color: #fff;
 
     border-radius: 12px;
 
@@ -298,19 +370,13 @@ input:focus {
 }
 
 
-.time:hover:not(:disabled) {
-
-    border-color: #888;
-}
-
-
 .time.selected {
 
-    background: white;
+    background: #fff;
 
-    color: black;
+    color: #000;
 
-    border-color: white;
+    border-color: #fff;
 
     font-weight: bold;
 }
@@ -322,29 +388,41 @@ input:focus {
 
 .time.reserved {
 
-    background: #351d1d;
+    background: #351b1b;
 
     color: #777;
 
-    border-color: #4a2929;
+    border-color: #4b2828;
 
     cursor: not-allowed;
 
-    text-decoration:
-        line-through;
-
+    text-decoration: line-through;
 }
 
 
-.loading,
-.empty {
+.loading {
 
     grid-column:
         1 / -1;
 
     text-align: center;
 
-    color: #888;
+    color: #777;
+
+    padding: 20px 5px;
+
+    font-size: 13px;
+}
+
+
+.no-times {
+
+    grid-column:
+        1 / -1;
+
+    text-align: center;
+
+    color: #777;
 
     padding: 20px 5px;
 
@@ -354,11 +432,56 @@ input:focus {
 }
 
 
-/*
-===============================
-ثبت
-===============================
-*/
+/* ========================================
+   فرم
+======================================== */
+
+.label {
+
+    display: block;
+
+    color: #888;
+
+    font-size: 12px;
+
+    margin:
+        0 0 7px;
+}
+
+
+input {
+
+    width: 100%;
+
+    height: 50px;
+
+    margin-bottom: 15px;
+
+    padding:
+        0 14px;
+
+    border:
+        1px solid #333;
+
+    border-radius: 12px;
+
+    background: #222;
+
+    color: #fff;
+
+    outline: none;
+
+    font-family: inherit;
+
+    font-size: 14px;
+}
+
+
+input:focus {
+
+    border-color: #777;
+}
+
 
 .submit {
 
@@ -366,15 +489,15 @@ input:focus {
 
     height: 54px;
 
-    margin-top: 5px;
+    margin-top: 3px;
 
     border: none;
 
     border-radius: 13px;
 
-    background: white;
+    background: #fff;
 
-    color: black;
+    color: #000;
 
     font-family: inherit;
 
@@ -394,15 +517,19 @@ input:focus {
 }
 
 
+/* ========================================
+   پیام
+======================================== */
+
 .message {
 
     display: none;
 
     padding: 14px;
 
-    margin-bottom: 18px;
-
     border-radius: 12px;
+
+    margin-bottom: 15px;
 
     text-align: center;
 
@@ -416,9 +543,9 @@ input:focus {
 
     display: block;
 
-    background: #12351f;
+    background: #12351e;
 
-    color: #8ff0a4;
+    color: #8eeaa2;
 }
 
 
@@ -426,9 +553,9 @@ input:focus {
 
     display: block;
 
-    background: #401c1c;
+    background: #401b1b;
 
-    color: #ff9999;
+    color: #ff9b9b;
 }
 
 
@@ -438,19 +565,25 @@ footer {
 
     color: #555;
 
-    font-size: 12px;
+    font-size: 11px;
 
     line-height: 2;
 
-    margin-top: 25px;
+    margin-top: 20px;
 }
 
 
-@media(max-width:400px) {
+@media(max-width:380px) {
 
     .logo h1 {
 
-        font-size: 31px;
+        font-size: 30px;
+
+    }
+
+    .day {
+
+        font-size: 11px;
 
     }
 
@@ -466,6 +599,10 @@ footer {
 
 <div class="container">
 
+
+<!-- ======================================
+     LOGO
+====================================== -->
 
 <div class="logo">
 
@@ -484,7 +621,9 @@ footer {
 ></div>
 
 
-<!-- خدمات -->
+<!-- ======================================
+     خدمات
+====================================== -->
 
 <div class="card">
 
@@ -497,6 +636,7 @@ footer {
 
 
         <button
+            type="button"
             class="service"
             data-service="کوتاهی مو"
         >
@@ -505,6 +645,7 @@ footer {
 
 
         <button
+            type="button"
             class="service"
             data-service="اصلاح ریش"
         >
@@ -513,6 +654,7 @@ footer {
 
 
         <button
+            type="button"
             class="service"
             data-service="کوتاهی + اصلاح ریش"
         >
@@ -525,7 +667,9 @@ footer {
 </div>
 
 
-<!-- تاریخ و ساعت -->
+<!-- ======================================
+     تقویم
+====================================== -->
 
 <div class="card">
 
@@ -534,45 +678,78 @@ footer {
     </div>
 
 
-    <label class="label">
-        تاریخ
-    </label>
+    <div class="calendar">
 
 
-    <div class="date-box">
+        <div class="calendar-header">
 
-        <div
-            id="persianDate"
-            class="empty"
-        >
 
-            <span id="dateText">
-                انتخاب تاریخ
-            </span>
+            <button
+                type="button"
+                class="calendar-nav"
+                id="nextMonth"
+            >
+                ‹
+            </button>
 
-            <span>
-                📅
-            </span>
+
+            <div
+                class="calendar-title"
+                id="calendarTitle"
+            >
+            </div>
+
+
+            <button
+                type="button"
+                class="calendar-nav"
+                id="prevMonth"
+            >
+                ›
+            </button>
+
 
         </div>
 
 
-        <input
-            type="date"
-            id="date"
-        >
+        <div class="weekdays">
+
+            <div>شنبه</div>
+            <div>یکشنبه</div>
+            <div>دوشنبه</div>
+            <div>سه‌شنبه</div>
+            <div>چهارشنبه</div>
+            <div>پنجشنبه</div>
+            <div>جمعه</div>
+
+        </div>
+
+
+        <div
+            class="days"
+            id="days"
+        ></div>
+
 
     </div>
 
 
     <div
-        id="times"
+        class="selected-date"
+        id="selectedDateText"
+    >
+        تاریخ انتخاب نشده
+    </div>
+
+
+    <div
         class="times"
+        id="times"
     >
 
-        <div class="empty">
+        <div class="no-times">
 
-            ابتدا تاریخ را انتخاب کنید
+            ابتدا یک تاریخ را انتخاب کنید
 
         </div>
 
@@ -581,7 +758,9 @@ footer {
 </div>
 
 
-<!-- اطلاعات مشتری -->
+<!-- ======================================
+     اطلاعات مشتری
+====================================== -->
 
 <div class="card">
 
@@ -591,8 +770,9 @@ footer {
 
 
     <label class="label">
-        نام و نام خانوادگی
+        نام مشتری
     </label>
+
 
     <input
         id="customerName"
@@ -605,16 +785,18 @@ footer {
         شماره موبایل
     </label>
 
+
     <input
         id="phone"
         type="tel"
-        maxlength="11"
         inputmode="numeric"
+        maxlength="11"
         placeholder="09123456789"
     >
 
 
     <button
+        type="button"
         id="submitButton"
         class="submit"
         disabled
@@ -642,298 +824,1117 @@ footer {
 <script>
 
 
-/*
-================================================
-آدرس Google Apps Script
-================================================
-*/
+/* ========================================
+   آدرس Apps Script
+======================================== */
 
 const GOOGLE_SCRIPT_URL =
 "https://script.google.com/macros/s/AKfycbzn111x1wlJU2ey4WT-q8I7OIZvMyhyK_MlbZST98TCWJ4wix5w8hq4khaDiJPL_I39/exec";
 
 
-/*
-================================================
-متغیرها
-================================================
-*/
+/* ========================================
+   اطلاعات تقویم
+======================================== */
+
+const monthNames = [
+
+    "فروردین",
+    "اردیبهشت",
+    "خرداد",
+    "تیر",
+    "مرداد",
+    "شهریور",
+    "مهر",
+    "آبان",
+    "آذر",
+    "دی",
+    "بهمن",
+    "اسفند"
+
+];
+
+
+const weekdays = [
+
+    "یکشنبه",
+    "دوشنبه",
+    "سه‌شنبه",
+    "چهارشنبه",
+    "پنجشنبه",
+    "جمعه",
+    "شنبه"
+
+];
+
+
+const persianDigits =
+"۰۱۲۳۴۵۶۷۸۹";
+
+
+/* ========================================
+   متغیرها
+======================================== */
 
 let selectedService = "";
 
 let selectedTime = "";
 
+let selectedGregorianDate = "";
+
+let calendarYear = 1405;
+
+let calendarMonth = 1;
+
+let selectedPersianDay = 0;
+
 let loadingTimes = false;
 
 
-/*
-================================================
-عناصر
-================================================
-*/
+/* ========================================
+   تبدیل عدد به فارسی
+======================================== */
 
-const serviceButtons =
-document.querySelectorAll(
-    ".service"
-);
+function toPersianDigits(value) {
 
-
-const datePicker =
-document.getElementById(
-    "date"
-);
-
-
-const persianDate =
-document.getElementById(
-    "persianDate"
-);
-
-
-const dateText =
-document.getElementById(
-    "dateText"
-);
-
-
-const times =
-document.getElementById(
-    "times"
-);
-
-
-const nameInput =
-document.getElementById(
-    "customerName"
-);
-
-
-const phoneInput =
-document.getElementById(
-    "phone"
-);
-
-
-const submitButton =
-document.getElementById(
-    "submitButton"
-);
-
-
-const message =
-document.getElementById(
-    "message"
-);
-
-
-/*
-================================================
-امروز
-================================================
-*/
-
-const today =
-new Date();
-
-
-const todayISO =
-today
-    .toISOString()
-    .split("T")[0];
-
-
-datePicker.min =
-todayISO;
-
-
-/*
-================================================
-تبدیل میلادی به شمسی
-================================================
-*/
-
-function toPersianDate(
-    dateString
-) {
-
-
-    if (!dateString) {
-
-        return "";
-
-    }
-
-
-    const parts =
-        dateString.split("-");
-
-
-    const year =
-        Number(parts[0]);
-
-
-    const month =
-        Number(parts[1]);
-
-
-    const day =
-        Number(parts[2]);
-
-
-    const date =
-        new Date(
-            year,
-            month - 1,
-            day
-        );
-
-
-    const formatter =
-        new Intl.DateTimeFormat(
-            "fa-IR-u-ca-persian",
-            {
-                year: "numeric",
-                month: "2-digit",
-                day: "2-digit"
-            }
-        );
-
-
-    return formatter.format(date);
+    return String(value).replace(
+        /\d/g,
+        number =>
+            persianDigits[number]
+    );
 
 }
 
 
-/*
-================================================
-باز کردن تاریخ‌گیر
-================================================
-*/
+/* ========================================
+   تبدیل فارسی به انگلیسی
+======================================== */
 
-persianDate.addEventListener(
+function toEnglishDigits(value) {
+
+    return String(value)
+        .replace(
+            /[۰-۹]/g,
+            digit =>
+                String(
+                    persianDigits.indexOf(
+                        digit
+                    )
+                )
+        );
+
+}
+
+
+/* ========================================
+   میلادی ← شمسی
+======================================== */
+
+function gregorianToJalali(
+    gy,
+    gm,
+    gd
+) {
+
+    const gdm = [
+        0,
+        31,
+        59,
+        90,
+        120,
+        151,
+        181,
+        212,
+        243,
+        273,
+        304,
+        334
+    ];
+
+
+    let jy;
+
+
+    if (gy > 1600) {
+
+        jy = 979;
+
+    } else {
+
+        jy = 0;
+
+    }
+
+
+    let gy2 =
+        gy > 1600
+        ? gy - 1600
+        : gy - 621;
+
+
+    let gy3 =
+        gm > 2
+        ? gy2 + 1
+        : gy2;
+
+
+    let days =
+        365 * gy2;
+
+
+    days +=
+        Math.floor(
+            (gy3 + 3) / 4
+        );
+
+
+    days -=
+        Math.floor(
+            (gy3 + 99) / 100
+        );
+
+
+    days +=
+        Math.floor(
+            (gy3 + 399) / 400
+        );
+
+
+    days +=
+        gd;
+
+
+    days +=
+        gdm[gm - 1];
+
+
+    if (
+        gm > 2 &&
+        (
+            gy % 4 === 0 &&
+            (
+                gy % 100 !== 0 ||
+                gy % 400 === 0
+            )
+        )
+    ) {
+
+        days++;
+
+    }
+
+
+    days -= 79;
+
+
+    const jNp =
+        Math.floor(
+            days / 12053
+        );
+
+
+    days %= 12053;
+
+
+    jy +=
+        33 * jNp;
+
+
+    jy +=
+        4 *
+        Math.floor(
+            days / 1461
+        );
+
+
+    days %= 1461;
+
+
+    if (days >= 366) {
+
+        jy +=
+            Math.floor(
+                (days - 1) / 365
+            );
+
+        days =
+            (days - 1) % 365;
+
+    }
+
+
+    let jm;
+
+    let jd;
+
+
+    if (days < 186) {
+
+        jm =
+            1 +
+            Math.floor(
+                days / 31
+            );
+
+        jd =
+            1 +
+            (days % 31);
+
+    } else {
+
+        jm =
+            7 +
+            Math.floor(
+                (days - 186) / 30
+            );
+
+        jd =
+            1 +
+            ((days - 186) % 30);
+
+    }
+
+
+    return {
+        year: jy,
+        month: jm,
+        day: jd
+    };
+
+}
+
+
+/* ========================================
+   شمسی ← میلادی
+======================================== */
+
+function jalaliToGregorian(
+    jy,
+    jm,
+    jd
+) {
+
+    let jy2;
+
+    if (jy >= 979) {
+
+        jy2 =
+            jy - 979;
+
+    } else {
+
+        jy2 =
+            jy - 0;
+
+    }
+
+
+    let days =
+        365 * jy2;
+
+
+    days +=
+        Math.floor(
+            jy2 / 33
+        ) * 8;
+
+
+    days +=
+        Math.floor(
+            (
+                jy2 % 33 + 3
+            ) / 4
+        );
+
+
+    if (jm < 7) {
+
+        days +=
+            (jm - 1) * 31;
+
+    } else {
+
+        days +=
+            (jm - 1) * 30 + 6;
+
+    }
+
+
+    days +=
+        jd - 1;
+
+
+    let gy =
+        1600 +
+        400 *
+        Math.floor(
+            days / 146097
+        );
+
+
+    days %=
+        146097;
+
+
+    if (days >= 36525) {
+
+        days--;
+
+        gy +=
+            100 *
+            Math.floor(
+                days / 36524
+            );
+
+        days %=
+            36524;
+
+
+        if (days >= 365) {
+
+            days++;
+
+        }
+
+    }
+
+
+    gy +=
+        4 *
+        Math.floor(
+            days / 1461
+        );
+
+
+    days %=
+        1461;
+
+
+    if (days >= 366) {
+
+        gy +=
+            Math.floor(
+                (days - 1) / 365
+            );
+
+        days =
+            (days - 1) % 365;
+
+    }
+
+
+    let gd =
+        days + 1;
+
+
+    const leap =
+        (
+            gy % 4 === 0 &&
+            (
+                gy % 100 !== 0 ||
+                gy % 400 === 0
+            )
+        );
+
+
+    const monthDays = [
+
+        31,
+
+        leap ? 29 : 28,
+
+        31,
+        30,
+        31,
+        30,
+        31,
+        31,
+        30,
+        31,
+        30,
+        31
+
+    ];
+
+
+    let gm = 1;
+
+
+    for (
+        let i = 0;
+        i < 12;
+        i++
+    ) {
+
+        if (
+            gd >
+            monthDays[i]
+        ) {
+
+            gd -=
+                monthDays[i];
+
+            gm++;
+
+        }
+        else {
+
+            break;
+
+        }
+
+    }
+
+
+    return {
+
+        year: gy,
+
+        month: gm,
+
+        day: gd
+
+    };
+
+}
+
+
+/* ========================================
+   تاریخ امروز شمسی
+======================================== */
+
+function getTodayJalali() {
+
+    const now =
+        new Date();
+
+
+    return gregorianToJalali(
+        now.getFullYear(),
+        now.getMonth() + 1,
+        now.getDate()
+    );
+
+}
+
+
+/* ========================================
+   تعداد روزهای ماه شمسی
+======================================== */
+
+function getDaysInJalaliMonth(
+    year,
+    month
+) {
+
+    if (month <= 6) {
+
+        return 31;
+
+    }
+
+
+    if (month <= 11) {
+
+        return 30;
+
+    }
+
+
+    /*
+      محاسبه اسفند بر اساس تبدیل
+    */
+
+    const nextYear =
+        jalaliToGregorian(
+            year + 1,
+            1,
+            1
+        );
+
+
+    const currentYear =
+        jalaliToGregorian(
+            year,
+            1,
+            1
+        );
+
+
+    const diff =
+        Math.round(
+            (
+                new Date(
+                    nextYear.year,
+                    nextYear.month - 1,
+                    nextYear.day
+                )
+                -
+                new Date(
+                    currentYear.year,
+                    currentYear.month - 1,
+                    currentYear.day
+                )
+            )
+            /
+            86400000
+        );
+
+
+    return diff === 365
+        ? 29
+        : 30;
+
+}
+
+
+/* ========================================
+   روز هفته
+   شنبه = 0
+======================================== */
+
+function getWeekIndex(
+    gy,
+    gm,
+    gd
+) {
+
+    const date =
+        new Date(
+            gy,
+            gm - 1,
+            gd
+        );
+
+
+    return (
+        date.getDay() + 1
+    ) % 7;
+
+}
+
+
+/* ========================================
+   تبدیل تاریخ به YYYY-MM-DD
+======================================== */
+
+function jalaliToISO(
+    year,
+    month,
+    day
+) {
+
+    const g =
+        jalaliToGregorian(
+            year,
+            month,
+            day
+        );
+
+
+    return (
+        g.year +
+        "-" +
+        String(g.month).padStart(2, "0") +
+        "-" +
+        String(g.day).padStart(2, "0")
+    );
+
+}
+
+
+/* ========================================
+   رسم تقویم
+======================================== */
+
+function renderCalendar() {
+
+    const title =
+        document.getElementById(
+            "calendarTitle"
+        );
+
+
+    const days =
+        document.getElementById(
+            "days"
+        );
+
+
+    title.textContent =
+        monthNames[
+            calendarMonth - 1
+        ]
+        +
+        " "
+        +
+        toPersianDigits(
+            calendarYear
+        );
+
+
+    days.innerHTML = "";
+
+
+    const firstDay =
+        jalaliToGregorian(
+            calendarYear,
+            calendarMonth,
+            1
+        );
+
+
+    const firstWeekday =
+        getWeekIndex(
+            firstDay.year,
+            firstDay.month,
+            firstDay.day
+        );
+
+
+    const totalDays =
+        getDaysInJalaliMonth(
+            calendarYear,
+            calendarMonth
+        );
+
+
+    const today =
+        getTodayJalali();
+
+
+    /*
+      خانه‌های خالی قبل از روز اول
+    */
+
+    for (
+        let i = 0;
+        i < firstWeekday;
+        i++
+    ) {
+
+        const empty =
+            document.createElement(
+                "div"
+            );
+
+
+        empty.className =
+            "day empty";
+
+
+        days.appendChild(
+            empty
+        );
+
+    }
+
+
+    /*
+      روزهای ماه
+    */
+
+    for (
+        let day = 1;
+        day <= totalDays;
+        day++
+    ) {
+
+
+        const button =
+            document.createElement(
+                "button"
+            );
+
+
+        button.type =
+            "button";
+
+
+        button.className =
+            "day";
+
+
+        button.textContent =
+            toPersianDigits(
+                day
+            );
+
+
+        /*
+          امروز
+        */
+
+        if (
+            calendarYear === today.year &&
+            calendarMonth === today.month &&
+            day === today.day
+        ) {
+
+            button.classList.add(
+                "today"
+            );
+
+        }
+
+
+        /*
+          تاریخ انتخاب‌شده
+        */
+
+        if (
+            calendarYear ===
+                selectedCalendarYear &&
+            calendarMonth ===
+                selectedCalendarMonth &&
+            day === selectedPersianDay
+        ) {
+
+            button.classList.add(
+                "selected"
+            );
+
+        }
+
+
+        /*
+          تاریخ‌های گذشته
+        */
+
+        const isPast =
+            compareJalali(
+                calendarYear,
+                calendarMonth,
+                day,
+                today.year,
+                today.month,
+                today.day
+            ) < 0;
+
+
+        if (isPast) {
+
+            button.classList.add(
+                "disabled"
+            );
+
+            button.disabled =
+                true;
+
+        }
+        else {
+
+            button.addEventListener(
+                "click",
+                function() {
+
+                    selectDate(
+                        calendarYear,
+                        calendarMonth,
+                        day
+                    );
+
+                }
+            );
+
+        }
+
+
+        days.appendChild(
+            button
+        );
+
+    }
+
+}
+
+
+/* ========================================
+   متغیرهای تاریخ انتخاب‌شده
+======================================== */
+
+let selectedCalendarYear = 0;
+
+let selectedCalendarMonth = 0;
+
+
+/* ========================================
+   مقایسه تاریخ شمسی
+======================================== */
+
+function compareJalali(
+    y1,
+    m1,
+    d1,
+    y2,
+    m2,
+    d2
+) {
+
+    if (y1 !== y2) {
+
+        return y1 - y2;
+
+    }
+
+
+    if (m1 !== m2) {
+
+        return m1 - m2;
+
+    }
+
+
+    return d1 - d2;
+
+}
+
+
+/* ========================================
+   انتخاب تاریخ
+======================================== */
+
+function selectDate(
+    year,
+    month,
+    day
+) {
+
+    selectedCalendarYear =
+        year;
+
+
+    selectedCalendarMonth =
+        month;
+
+
+    selectedPersianDay =
+        day;
+
+
+    selectedGregorianDate =
+        jalaliToISO(
+            year,
+            month,
+            day
+        );
+
+
+    selectedTime = "";
+
+
+    const weekdayIndex =
+        getWeekIndex(
+            jalaliToGregorian(
+                year,
+                month,
+                day
+            ).year,
+            jalaliToGregorian(
+                year,
+                month,
+                day
+            ).month,
+            jalaliToGregorian(
+                year,
+                month,
+                day
+            ).day
+        );
+
+
+    /*
+      تبدیل شنبه‌محور به نام روز
+    */
+
+    const weekdayNames =
+        [
+            "شنبه",
+            "یکشنبه",
+            "دوشنبه",
+            "سه‌شنبه",
+            "چهارشنبه",
+            "پنجشنبه",
+            "جمعه"
+        ];
+
+
+    const text =
+        weekdayNames[
+            weekdayIndex
+        ]
+        +
+        " "
+        +
+        toPersianDigits(day)
+        +
+        " "
+        +
+        monthNames[
+            month - 1
+        ]
+        +
+        " "
+        +
+        toPersianDigits(year);
+
+
+    document.getElementById(
+        "selectedDateText"
+    ).textContent =
+        text;
+
+
+    renderCalendar();
+
+
+    loadTimes();
+
+
+    checkForm();
+
+}
+
+
+/* ========================================
+   ماه بعد
+======================================== */
+
+document.getElementById(
+    "nextMonth"
+).addEventListener(
     "click",
     function() {
 
-        datePicker.showPicker();
+
+        calendarMonth++;
+
+
+        if (
+            calendarMonth > 12
+        ) {
+
+            calendarMonth = 1;
+
+            calendarYear++;
+
+        }
+
+
+        renderCalendar();
 
     }
 );
 
 
-/*
-================================================
-انتخاب تاریخ
-================================================
-*/
+/* ========================================
+   ماه قبل
+======================================== */
 
-datePicker.addEventListener(
-    "change",
+document.getElementById(
+    "prevMonth"
+).addEventListener(
+    "click",
     function() {
 
 
-        if (!datePicker.value) {
+        const today =
+            getTodayJalali();
+
+
+        /*
+          اجازه نمی‌دهیم به ماه‌های قبل
+          از ماه جاری برویم.
+        */
+
+        if (
+            calendarYear === today.year &&
+            calendarMonth === today.month
+        ) {
 
             return;
 
         }
 
 
-        dateText.textContent =
-            toPersianDate(
-                datePicker.value
-            );
+        calendarMonth--;
 
 
-        persianDate.classList.remove(
-            "empty"
-        );
+        if (
+            calendarMonth < 1
+        ) {
+
+            calendarMonth = 12;
+
+            calendarYear--;
+
+        }
 
 
-        selectedTime = "";
-
-
-        loadTimes();
+        renderCalendar();
 
     }
 );
 
 
-/*
-================================================
-انتخاب خدمت
-================================================
-*/
+/* ========================================
+   خدمات
+======================================== */
 
-serviceButtons.forEach(
-    button => {
+document
+    .querySelectorAll(
+        ".service"
+    )
+    .forEach(
+        button => {
 
-        button.addEventListener(
-            "click",
-            function() {
+            button.addEventListener(
+                "click",
+                function() {
 
 
-                serviceButtons.forEach(
-                    item => {
+                    document
+                        .querySelectorAll(
+                            ".service"
+                        )
+                        .forEach(
+                            item => {
 
-                        item.classList.remove(
-                            "selected"
+                                item.classList.remove(
+                                    "selected"
+                                );
+
+                            }
                         );
 
-                    }
-                );
+
+                    button.classList.add(
+                        "selected"
+                    );
 
 
-                button.classList.add(
-                    "selected"
-                );
+                    selectedService =
+                        button.dataset.service;
 
 
-                selectedService =
-                    button.dataset.service;
+                    checkForm();
+
+                }
+            );
+
+        }
+    );
 
 
-                checkForm();
-
-            }
-        );
-
-    }
-);
-
-
-/*
-================================================
-نمایش پیام
-================================================
-*/
-
-function showMessage(
-    text,
-    type
-) {
-
-    message.textContent =
-        text;
-
-    message.className =
-        "message " + type;
-
-}
-
-
-/*
-================================================
-دریافت ساعت‌ها
-================================================
-*/
+/* ========================================
+   دریافت ساعت‌های رزرو شده
+======================================== */
 
 async function loadTimes() {
 
 
-    const date =
-        datePicker.value;
-
-
-    if (!date) {
+    if (
+        !selectedGregorianDate
+    ) {
 
         return;
 
@@ -949,11 +1950,16 @@ async function loadTimes() {
 
     loadingTimes = true;
 
-
     selectedTime = "";
 
 
     checkForm();
+
+
+    const times =
+        document.getElementById(
+            "times"
+        );
 
 
     times.innerHTML =
@@ -971,7 +1977,9 @@ async function loadTimes() {
             GOOGLE_SCRIPT_URL +
             "?action=times" +
             "&date=" +
-            encodeURIComponent(date) +
+            encodeURIComponent(
+                selectedGregorianDate
+            ) +
             "&t=" +
             Date.now();
 
@@ -989,11 +1997,12 @@ async function loadTimes() {
             await response.json();
 
 
-        if (!data.success) {
+        if (
+            !data.success
+        ) {
 
             throw new Error(
-                data.message
-                ||
+                data.message ||
                 "خطا"
             );
 
@@ -1009,20 +2018,15 @@ async function loadTimes() {
     }
     catch(error) {
 
-
         console.error(error);
 
 
         times.innerHTML =
         `
-            <div class="empty">
-
-                دریافت ساعت‌ها انجام نشد.
-
+            <div class="no-times">
+                دریافت نوبت‌ها انجام نشد.
                 <br>
-
                 دوباره تلاش کنید.
-
             </div>
         `;
 
@@ -1037,11 +2041,9 @@ async function loadTimes() {
 }
 
 
-/*
-================================================
-نمایش ساعت‌ها
-================================================
-*/
+/* ========================================
+   نمایش ساعت‌ها
+======================================== */
 
 function renderTimes(
     allTimes,
@@ -1049,15 +2051,23 @@ function renderTimes(
 ) {
 
 
+    const times =
+        document.getElementById(
+            "times"
+        );
+
+
     times.innerHTML = "";
 
 
-    if (!allTimes.length) {
+    if (
+        !allTimes.length
+    ) {
 
         times.innerHTML =
         `
-            <div class="empty">
-                ساعتی تعریف نشده است.
+            <div class="no-times">
+                ساعتی برای این روز تعریف نشده است.
             </div>
         `;
 
@@ -1089,9 +2099,7 @@ function renderTimes(
 
 
             /*
-            ====================================
-            اگر رزرو شده باشد
-            ====================================
+              ساعت رزرو شده
             */
 
             if (
@@ -1111,7 +2119,7 @@ function renderTimes(
 
 
                 button.title =
-                    "این ساعت قبلاً رزرو شده است.";
+                    "این ساعت رزرو شده است.";
 
 
             }
@@ -1165,11 +2173,60 @@ function renderTimes(
 }
 
 
-/*
-================================================
-بررسی فرم
-================================================
-*/
+/* ========================================
+   فرم
+======================================== */
+
+const nameInput =
+document.getElementById(
+    "customerName"
+);
+
+
+const phoneInput =
+document.getElementById(
+    "phone"
+);
+
+
+const submitButton =
+document.getElementById(
+    "submitButton"
+);
+
+
+const message =
+document.getElementById(
+    "message"
+);
+
+
+nameInput.addEventListener(
+    "input",
+    checkForm
+);
+
+
+phoneInput.addEventListener(
+    "input",
+    function() {
+
+        phoneInput.value =
+            phoneInput.value.replace(
+                /\D/g,
+                ""
+            );
+
+
+        checkForm();
+
+    }
+);
+
+
+/* ========================================
+   بررسی فرم
+======================================== */
 
 function checkForm() {
 
@@ -1191,7 +2248,7 @@ function checkForm() {
     submitButton.disabled =
         !(
             selectedService &&
-            datePicker.value &&
+            selectedGregorianDate &&
             selectedTime &&
             name &&
             validPhone &&
@@ -1201,47 +2258,29 @@ function checkForm() {
 }
 
 
-/*
-================================================
-نام
-================================================
-*/
+/* ========================================
+   پیام
+======================================== */
 
-nameInput.addEventListener(
-    "input",
-    checkForm
-);
+function showMessage(
+    text,
+    type
+) {
 
-
-/*
-================================================
-شماره موبایل
-================================================
-*/
-
-phoneInput.addEventListener(
-    "input",
-    function() {
+    message.textContent =
+        text;
 
 
-        phoneInput.value =
-            phoneInput.value.replace(
-                /\D/g,
-                ""
-            );
+    message.className =
+        "message " +
+        type;
+
+}
 
 
-        checkForm();
-
-    }
-);
-
-
-/*
-================================================
-ثبت نوبت
-================================================
-*/
+/* ========================================
+   ثبت نوبت
+======================================== */
 
 submitButton.addEventListener(
     "click",
@@ -1259,26 +2298,6 @@ async function bookAppointment() {
         return;
 
     }
-
-
-    const customerName =
-        nameInput.value.trim();
-
-
-    const phone =
-        phoneInput.value.trim();
-
-
-    const service =
-        selectedService;
-
-
-    const date =
-        datePicker.value;
-
-
-    const time =
-        selectedTime;
 
 
     submitButton.disabled =
@@ -1304,31 +2323,31 @@ async function bookAppointment() {
 
         params.append(
             "customerName",
-            customerName
+            nameInput.value.trim()
         );
 
 
         params.append(
             "phone",
-            phone
+            phoneInput.value.trim()
         );
 
 
         params.append(
             "service",
-            service
+            selectedService
         );
 
 
         params.append(
             "date",
-            date
+            selectedGregorianDate
         );
 
 
         params.append(
             "time",
-            time
+            selectedTime
         );
 
 
@@ -1350,12 +2369,13 @@ async function bookAppointment() {
 
 
         /*
-        ========================================
-        اگر قبلاً رزرو شده
-        ========================================
+          اگر شخص دیگری قبل از ما
+          همان ساعت را گرفته باشد
         */
 
-        if (!data.success) {
+        if (
+            !data.success
+        ) {
 
 
             showMessage(
@@ -1366,7 +2386,8 @@ async function bookAppointment() {
 
 
             /*
-            ساعت‌ها را مجدداً بگیر
+              فوراً لیست ساعت‌ها
+              دوباره خوانده می‌شود.
             */
 
             await loadTimes();
@@ -1378,9 +2399,7 @@ async function bookAppointment() {
 
 
         /*
-        ========================================
-        موفق
-        ========================================
+          موفق
         */
 
         showMessage(
@@ -1389,16 +2408,21 @@ async function bookAppointment() {
         );
 
 
+        /*
+          فرم پاک می‌شود
+        */
+
         nameInput.value = "";
 
         phoneInput.value = "";
+
 
         selectedTime = "";
 
 
         /*
-        ساعت رزروشده فوراً
-        غیرفعال می‌شود
+          ساعت رزرو شده فوراً
+          غیرفعال می‌شود
         */
 
         await loadTimes();
@@ -1412,7 +2436,7 @@ async function bookAppointment() {
 
 
         showMessage(
-            "خطا در اتصال به سیستم.",
+            "ارتباط با سرور برقرار نشد.",
             "error"
         );
 
@@ -1427,6 +2451,29 @@ async function bookAppointment() {
 
 }
 
+
+/* ========================================
+   شروع تقویم
+======================================== */
+
+(function initCalendar() {
+
+
+    const today =
+        getTodayJalali();
+
+
+    calendarYear =
+        today.year;
+
+
+    calendarMonth =
+        today.month;
+
+
+    renderCalendar();
+
+})();
 
 </script>
 
